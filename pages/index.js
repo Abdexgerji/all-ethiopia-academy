@@ -3,18 +3,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import { useRouter } from 'next/router';
-import SimpleImageSlider from 'react-simple-image-slider';
 import { useEffect, useState } from 'react';
+import CarouselComponent from '../components/Carousel';
 
 const images = [
   {
-    url: '/pictures/131671999_129624305632242_8101065752514849759_n.jpg',
+    url: '/pictures/img4-croped.jpg',
   },
   {
-    url: '/pictures/download6.jpg',
+    url: '/pictures/img5.jpg',
   },
   {
-    url: '/pictures/images.jpg',
+    url: '/pictures/img18-croped.jpg',
   },
 ];
 
@@ -44,8 +44,8 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Ethiopian Bunna</title>
-        <meta name='description' content='Ethiopia Bunna"s website' />
-        <link rel='icon' href='/favicon.ico' />
+        <meta name='description' content='All Ethiopia Soccer Academy' />
+        <link rel='icon' href='/pictures/logo.jpg' />
       </Head>
       <nav>
         <img src='/pictures/logo.jpg' alt='bunna logo' />
@@ -92,48 +92,40 @@ export default function Home() {
           </ul>
         </div>
       </nav>
-      <main className='home-main'>
-        {/* // sxn carousel */}
-        {/* {innerWidth} */}
-        <div
-          style={{
-            marginBlock: '15px',
-            display: 'flex',
-            justifyContent: 'center',
-          }}
-        >
-          <SimpleImageSlider
-            // autoPlay={true}
-            width={innerWidth > 950 ? 944 : '90%'}
-            bgColor='transparent'
-            height={innerWidth > 500 ? 400 : 180}
-            images={images}
-            showBullets={true}
-            showNavs={true}
-          />
-        </div>
-        {/* <div className='stadium-image'>
-          <img src='/pictures/download (7).jpg' alt='bunna logo' />
-          <h1 className='bunna-heading'>Ethiopia Bunna F.C.</h1>
-        </div> */}
-        {/* // sxn news*/}
-        <h2
-          style={{ margin: '3px 0', fontSize: '37px' }}
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <h1
+          style={{ marginBlock: '0', fontSize: '40px' }}
           className='font-gradient'
         >
-          Latest News
-        </h2>
+          All Ethiopia Soccer Academy
+        </h1>
+      </div>
+      {/* // sxn carousel */}
+      <div style={{ marginTop: '10px' }}>
+        <CarouselComponent />
+      </div>
+      <main className='home-main'>
+        {/* // sxn news*/}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <h2
+            style={{ margin: '3px 0', fontSize: '37px', marginBottom: '10px' }}
+            className='font-gradient'
+          >
+            Latest News
+          </h2>
+        </div>
         <div
           style={{
             display: 'flex',
             justifyContent: 'space-between',
             maxWidth: '90%',
+            marginBlock: 'auto',
           }}
         >
           <div className='news-card'>
             <img
               className='news-card-image'
-              src='/pictures/download (7).jpg'
+              src='/pictures/logo.jpg'
               alt='news image'
             />
             <h5
@@ -147,7 +139,7 @@ export default function Home() {
           <div className='news-card'>
             <img
               className='news-card-image'
-              src='/pictures/download (7).jpg'
+              src='/pictures/logo.jpg'
               alt='news image'
             />
             <h5
@@ -161,7 +153,7 @@ export default function Home() {
           <div className='news-card'>
             <img
               className='news-card-image'
-              src='/pictures/download (7).jpg'
+              src='/pictures/logo.jpg'
               alt='news image'
             />
             <h5
@@ -174,28 +166,39 @@ export default function Home() {
           </div>
         </div>
         {/* // sxn accomplishment*/}
-        <h2
-          style={{ margin: '3px 0', fontSize: '17px' }}
-          className='font-gradient'
-        >
-          Accomplishments
-        </h2>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <h2
+            style={{ margin: '3px 0', fontSize: '37px' }}
+            className='font-gradient'
+          >
+            Accomplishments
+          </h2>
+        </div>
         <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div>More than 100 players training</div>
+          <div>5+ professional training staff</div>
+          <div>Location: Abebe Bikila Stadium</div>
+        </div>
         {/* // sxn players*/}
-        <h2
-          style={{ margin: '3px 0', fontSize: '37px' }}
-          className='font-gradient'
-        >
-          Players
-        </h2>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <h2
+            style={{ margin: '3px 0', fontSize: '37px' }}
+            className='font-gradient'
+          >
+            Players
+          </h2>
+        </div>
         <br />
         {/* // sxn coach*/}
-        <h2
-          style={{ margin: '3px 0', fontSize: '37px' }}
-          className='font-gradient'
-        >
-          Coach
-        </h2>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <h2
+            style={{ margin: '3px 0', fontSize: '37px' }}
+            className='font-gradient'
+          >
+            Coach
+          </h2>
+        </div>
         <br />
       </main>
 

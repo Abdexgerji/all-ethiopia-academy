@@ -25,9 +25,10 @@ a {
 :root {
   /* for bunna */
   /* --my-yellow-color: #ffd700; */
-  --my-yellow-color: #008001;
+  --my-yellow-color: ;
+  --my-yellow-color: #f7f700;
   /* --my-red-color: #900000; */
-  --my-red-color: #f7f700;
+  --my-red-color: #d31119;
 
   /* for all-soccer */
   --green: #008001;
@@ -57,10 +58,11 @@ nav {
 }
 
 nav img {
-  width: 52px;
+  width: 62px;
   height: auto;
   padding: 5px;
   margin-left: 10px;
+  border-radius: 10px;
 }
 
 .nav-ul {

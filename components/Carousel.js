@@ -1,41 +1,45 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
-('/pictures/img4-croped.jpg');
-('/pictures/img5.jpg');
-('/pictures/img18-croped.jpg');
-
-const contact = () => {
+const CarouselComponent = () => {
   return (
-    <div style={{ width: '600px', margin: 'auto' }}>
+    <div
+      className='carousel-wrapper'
+      style={{
+        width: '95%', //! this width is the width of the carousel
+        maxWidth: '1000px',
+        margin: 'auto',
+      }}
+    >
       <Carousel
         infiniteLoop
         showThumbs={false}
         dynamicHeight={false}
-        autoPlay={true}
+        // autoPlay={true}
         // centerMode={true}
         showArrows={true}
+        showStatus={false}
         stopOnHover={true}
         // width={'40%'}
       >
         <div>
           <img
             style={{ objectFit: 'cover' }}
-            height='300'
+            height='500' //! this height is the height of the carousel
             src='/pictures/img4-croped.jpg'
           />
         </div>
         <div>
           <img
             style={{ objectFit: 'cover' }}
-            height='300'
+            height='500' //! this height is the height of the carousel
             src='/pictures/img5.jpg'
           />
         </div>
         <div>
           <img
             style={{ objectFit: 'cover', objectPosition: 'top' }}
-            height='300'
+            height='500' //! this height is the height of the carousel
             src='/pictures/img18-croped.jpg'
           />
         </div>
@@ -44,4 +48,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default CarouselComponent;
