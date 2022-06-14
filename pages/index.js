@@ -5,6 +5,10 @@ import styles from '../styles/Home.module.css';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import CarouselComponent from '../components/Carousel';
+import NavBar from '../components/NavBar';
+import PlayerSVG from '../public/svg/my-svg/PlayerSVG';
+import CoachSVG from '../public/svg/my-svg/CoachSVG';
+import StadiumSVG from '../public/svg/my-svg/StadiumSVG';
 
 const images = [
   {
@@ -41,70 +45,210 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Ethiopian Bunna</title>
         <meta name='description' content='All Ethiopia Soccer Academy' />
         <link rel='icon' href='/pictures/logo.jpg' />
       </Head>
-      <nav>
-        <img src='/pictures/logo.jpg' alt='bunna logo' />
-        <div className='nav-div'>
-          <ul className='nav-ul'>
-            <li>
-              <Link href='/'>
-                <a className={`${router.pathname === '/' && 'current-page'}`}>
-                  HOME
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/contact'>
-                <a
-                  className={`${router.pathname === '/NEWS' && 'current-page'}`}
-                >
-                  NEWS
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/about'>
-                <a
-                  className={`${
-                    router.pathname === '/about' && 'current-page'
-                  }`}
-                >
-                  ABOUT
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/contact'>
-                <a
-                  className={`${
-                    router.pathname === '/contact' && 'current-page'
-                  }`}
-                >
-                  CONTACT US
-                </a>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <h1
-          style={{ marginBlock: '0', fontSize: '40px' }}
-          className='font-gradient'
-        >
-          All Ethiopia Soccer Academy
-        </h1>
-      </div>
-      {/* // sxn carousel */}
-      <div style={{ marginTop: '10px' }}>
-        <CarouselComponent />
-      </div>
+
+      {/* // ! */}
+      <div className='grass-background'></div>
+
       <main className='home-main'>
+        <div className='first-view'>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <h1
+              style={{ marginBlock: '0', fontSize: '40px' }}
+              className='font-gradient'
+            >
+              All Ethiopia Soccer Academy
+            </h1>
+          </div>
+          {/* // sxn carousel */}
+          <div style={{ marginTop: '10px' }}>
+            <CarouselComponent />
+          </div>
+        </div>
+        {/* // sxn stats*/}
+
+        <div
+          style={{
+            // marginBlock: '70px',
+            minHeight: '100vh',
+            paddingInline: '30px',
+            // backgroundImage:
+            //   'url(/pictures/daniel-norin-lBhhnhndpE0-unsplash.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'right',
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <h2
+              style={{
+                margin: '3px 0',
+                fontSize: '37px',
+                marginBottom: '20px',
+              }}
+              className='font-gradient'
+            >
+              Stats
+            </h2>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <div
+              className='stats-card'
+              style={{
+                width: '30%',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                border: '1px solid #0080001c',
+                cursor: 'pointer',
+              }}
+            >
+              <div
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: ' center',
+                }}
+              >
+                {/* svg */}
+                <PlayerSVG
+                  // fill='#008001'
+                  fill='black'
+                  width={'50%'}
+                />
+              </div>
+              {/* Name */}
+              <h3
+                style={{
+                  fontSize: ' 37px',
+                  marginBlock: '0',
+                  marginBottom: '10px',
+                  color: 'yellow',
+                }}
+              >
+                Trainers
+              </h3>
+              {/* Number */}
+
+              <span
+                style={{ fontSize: '52px', fontWeight: '900', color: 'red' }}
+              >
+                {' '}
+                100+
+              </span>
+            </div>
+            <div
+              className='stats-card'
+              style={{
+                width: '30%',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                border: '1px solid #0080001c',
+                cursor: 'pointer',
+              }}
+            >
+              <div
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: ' center',
+                }}
+              >
+                {/* svg */}
+                <CoachSVG
+                  // fill='#008001'
+                  fill='black'
+                  width={'50%'}
+                />
+              </div>
+              {/* Name */}
+              <h3
+                style={{
+                  fontSize: ' 37px',
+                  marginBlock: '0',
+                  marginBottom: '10px',
+                  color: 'yellow',
+                }}
+              >
+                Training Staff
+              </h3>
+              {/* Number */}
+
+              <span
+                style={{ fontSize: '52px', fontWeight: '900', color: 'red' }}
+              >
+                {' '}
+                5+
+              </span>
+            </div>
+            <div
+              className='stats-card'
+              style={{
+                width: '30%',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                border: '1px solid #0080001c',
+                cursor: 'pointer',
+              }}
+            >
+              <div
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: ' center',
+                }}
+              >
+                {/* svg */}
+                <StadiumSVG
+                  // fill='#008001'
+                  fill='black'
+                  width={'50%'}
+                />
+                {/* <img
+                  style={{ width: '66%' }}
+                  // src='/svg/stadium-green-edited.jpg'
+                  src='/svg/stadium-black-edited.jpg'
+                  alt='stadium'
+                /> */}
+              </div>
+              {/* Name */}
+              <h3
+                style={{
+                  fontSize: ' 37px',
+                  marginBlock: '0',
+                  marginBottom: '10px',
+                  color: 'yellow',
+                }}
+              >
+                Location
+              </h3>
+              {/* Number */}
+
+              <span
+                style={{ fontSize: '150%', fontWeight: '900', color: 'red' }}
+              >
+                {' '}
+                Abebe Bikila Stadium
+              </span>
+            </div>
+          </div>
+        </div>
+        {/* // sxn coach*/}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <h2
+            style={{ margin: '3px 0', fontSize: '37px' }}
+            className='font-gradient'
+          >
+            Training Staff
+          </h2>
+        </div>
+        <br />
         {/* // sxn news*/}
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <h2
@@ -165,44 +309,7 @@ export default function Home() {
             <p className='text-center'>News 3 details.....</p>
           </div>
         </div>
-        {/* // sxn accomplishment*/}
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <h2
-            style={{ margin: '3px 0', fontSize: '37px' }}
-            className='font-gradient'
-          >
-            Accomplishments
-          </h2>
-        </div>
-        <br />
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <div>More than 100 players training</div>
-          <div>5+ professional training staff</div>
-          <div>Location: Abebe Bikila Stadium</div>
-        </div>
-        {/* // sxn players*/}
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <h2
-            style={{ margin: '3px 0', fontSize: '37px' }}
-            className='font-gradient'
-          >
-            Players
-          </h2>
-        </div>
-        <br />
-        {/* // sxn coach*/}
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <h2
-            style={{ margin: '3px 0', fontSize: '37px' }}
-            className='font-gradient'
-          >
-            Coach
-          </h2>
-        </div>
-        <br />
       </main>
-
-      <footer>footer</footer>
-    </div>
+    </>
   );
 }

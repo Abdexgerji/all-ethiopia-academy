@@ -7,7 +7,7 @@ const CarouselComponent = () => {
       className='carousel-wrapper'
       style={{
         width: '95%', //! this width is the width of the carousel
-        maxWidth: '1000px',
+        maxWidth: '900px',
         margin: 'auto',
       }}
     >
@@ -15,7 +15,7 @@ const CarouselComponent = () => {
         infiniteLoop
         showThumbs={false}
         dynamicHeight={false}
-        // autoPlay={true}
+        autoPlay={true}
         // centerMode={true}
         showArrows={true}
         showStatus={false}
@@ -25,21 +25,21 @@ const CarouselComponent = () => {
         <div>
           <img
             style={{ objectFit: 'cover' }}
-            height='500' //! this height is the height of the carousel
+            height='400' //! this height is the height of the carousel
             src='/pictures/img4-croped.jpg'
           />
         </div>
         <div>
           <img
             style={{ objectFit: 'cover' }}
-            height='500' //! this height is the height of the carousel
+            height='400' //! this height is the height of the carousel
             src='/pictures/img5.jpg'
           />
         </div>
         <div>
           <img
             style={{ objectFit: 'cover', objectPosition: 'top' }}
-            height='500' //! this height is the height of the carousel
+            height='400' //! this height is the height of the carousel
             src='/pictures/img18-croped.jpg'
           />
         </div>
