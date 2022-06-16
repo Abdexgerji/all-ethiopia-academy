@@ -6,8 +6,8 @@ const CarouselComponent = () => {
     <div
       className='carousel-wrapper'
       style={{
-        width: '95%', //! this width is the width of the carousel
-        maxWidth: '900px',
+        width: '100%', //! this width is the width of the carousel
+        // maxWidth: '900px',
         margin: 'auto',
       }}
     >
@@ -25,22 +25,26 @@ const CarouselComponent = () => {
       >
         <div>
           <img
-            style={{ objectFit: 'cover' }}
-            height='500' //! this height is the height of the carousel
+            style={{ objectFit: 'cover', height: '90vh' }}
+            // height='500vh' //! this height is the height of the carousel
             src='/pictures/img4-croped.jpg'
           />
         </div>
         <div>
           <img
-            style={{ objectFit: 'cover' }}
-            height='500' //! this height is the height of the carousel
+            style={{ objectFit: 'cover', height: '90vh' }}
+            // height='500vh' //! this height is the height of the carousel
             src='/pictures/img5.jpg'
           />
         </div>
         <div>
           <img
-            style={{ objectFit: 'cover', objectPosition: 'top' }}
-            height='500' //! this height is the height of the carousel
+            style={{
+              objectFit: 'cover',
+              height: '90vh',
+              objectPosition: 'top',
+            }}
+            // height='500vh' //! this height is the height of the carousel
             src='/pictures/img18-croped.jpg'
           />
         </div>

@@ -3,10 +3,11 @@
 //! this svg doesn't work
 //! this svg doesn't work
 
-const StadiumSVG = ({ width, height, fill, style }) => {
+const StadiumSVG = ({ width, height, fill, style, className }) => {
   return (
     <svg
       style={{ ...style }}
+      className={className}
       width={width}
       height={height}
       version='1.0'

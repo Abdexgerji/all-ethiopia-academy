@@ -53,27 +53,11 @@ export default function Home() {
         <link rel='icon' href='/pictures/logo.jpg' />
       </Head>
 
-      {/* // ! */}
-      <div className='grass-background'>
-        <Image
-          // loader={myLoader}
-          src='/pictures/daniel-norin-lBhhnhndpE0-unsplash.jpg'
-          alt='Grass background'
-          className='grass-background'
-          width={500}
-          height={500}
-          priority={true} //image will appear first
-          style={{ display: 'none !important' }}
-        />
-      </div>
-
       <main className='home-main'>
         <div
           className='first-view'
           style={{
             display: 'flex',
-            backdropFilter: 'blur(4px)',
-            marginTop: '75px',
           }}
         >
           <div
@@ -81,15 +65,24 @@ export default function Home() {
               display: 'flex',
               justifyContent: 'center',
               alignSelf: 'center',
+              position: 'absolute',
+              width: '98vw',
+              zIndex: '2',
+              marginTop: '-370px',
             }}
           >
             <h1
               style={{
                 marginBlock: '0',
-                fontSize: '60px',
+                fontSize: 'max(4vw,30px)',
+                fontFamily: 'serif',
                 textAlign: 'center',
-                color: 'yellow',
-                textShadow: '6px 4px 4px #ff1f1f5e',
+                color: 'white',
+                boxShadow: '0 0 11px #00000094',
+                display: 'inline-block',
+                margin: 'auto',
+                padding: '2px',
+                backdropFilter: 'blur(1px)',
               }}
               // className='yellow-red-font-style'
             >
@@ -100,24 +93,73 @@ export default function Home() {
           <div
             style={{
               marginTop: '10px',
-              opacity: '0.9',
             }}
           >
             <CarouselComponent />
           </div>
         </div>
-        {/* // sxn stats*/}
+        {/* // sxn short about */}
+        <div className='second-view full-vh'>
+          <div className='text-wrapper'>
+            <h2>Best Soccer Academy In Ethiopia</h2>
+            <p>
+              We are different. We strive to make the best out of our trainees
+              and help them compete in the best leagues!
+            </p>
+          </div>
+          <div
+            className='image-wrapper'
+            style={{
+              position: 'relative',
+              width: '50%',
+              aspectRatio: '7/5',
+            }}
+          >
+            <Image
+              // loader={myLoader}
+              src='/pictures/training-image.jpg'
+              alt='Training Image'
+              layout='fill'
+              style={{}}
+              objectFit='cover'
+            />
+          </div>
+        </div>
 
-        <div
-          style={{
-            paddingInline: '30px',
-            minHeight: '100vh',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-around',
-          }}
-        >
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
+        {/* // sxn stats*/}
+        <div className='stat-wrapper'>
+          {/* background image of grass*/}
+          {/* //future should try parallax with this one instead of using background-image*/}
+          <div
+            style={{
+              background: 'url(/pictures/soccer-field.webp)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'bottom',
+              backgroundAttachment: 'fixed',
+            }}
+            className='next-image-wrapper'
+          >
+            {/* <Image
+              // loader={myLoader}
+              src='/pictures/soccer-field.jpg'
+              alt='Training Image'
+              layout='fill'
+              style={{ position: 'absolute' }}
+              objectFit='cover'
+              objectPosition='bottom'
+            /> */}
+          </div>
+
+          <div
+            style={{
+              paddingInline: '30px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-around',
+              height: '100%',
+            }}
+          >
+            {/* <div style={{ display: 'flex', justifyContent: 'center' }}>
             <h2
               style={{
                 margin: '3px 0',
@@ -128,148 +170,66 @@ export default function Home() {
             >
               Stats
             </h2>
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <div
-              className='stats-card'
-              style={{
-                width: '30%',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                border: '1px solid #0080001c',
-                cursor: 'pointer',
-              }}
-            >
-              <div
-                style={{
-                  width: '100%',
-                  display: 'flex',
-                  justifyContent: ' center',
-                }}
-              >
-                {/* svg */}
-                <PlayerSVG
-                  // fill='#008001'
-                  fill='yellow'
-                  width={'50%'}
-                />
-              </div>
-              {/* Name */}
-              <h3
-                style={{
-                  fontSize: ' 37px',
-                  marginBlock: '0',
-                  marginBottom: '10px',
-                  color: 'yellow',
-                }}
-              >
-                Trainees
-              </h3>
-              {/* Number */}
+          </div> */}
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <div className='stats-card'>
+                <div className='icon-wrapper'>
+                  {/* svg */}
+                  <PlayerSVG
+                    // fill='#008001'
+                    fill='white'
+                    width={'50%'}
+                    className='icon'
+                  />
+                </div>
+                {/* Name */}
+                <h3 className='stat-name'>Trainees</h3>
+                {/* Number */}
 
-              <span
-                style={{ fontSize: '52px', fontWeight: '900', color: 'red' }}
-              >
-                {' '}
-                100+
-              </span>
-            </div>
-            <div
-              className='stats-card'
-              style={{
-                width: '30%',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                border: '1px solid #0080001c',
-                cursor: 'pointer',
-              }}
-            >
-              <div
-                style={{
-                  width: '100%',
-                  display: 'flex',
-                  justifyContent: ' center',
-                }}
-              >
-                {/* svg */}
-                <CoachSVG
-                  // fill='#008001'
-                  fill='yellow'
-                  width={'50%'}
-                />
+                <span className='stat-number'> 100+</span>
               </div>
-              {/* Name */}
-              <h3
-                style={{
-                  fontSize: ' 37px',
-                  marginBlock: '0',
-                  marginBottom: '10px',
-                  color: 'yellow',
-                }}
-              >
-                Training Staff
-              </h3>
-              {/* Number */}
+              <div className='stats-card'>
+                <div className='icon-wrapper'>
+                  {/* svg */}
+                  <CoachSVG
+                    // fill='#008001'
+                    fill='white'
+                    width={'50%'}
+                    className='icon'
+                    style={{ padding: '5px 0' }}
+                  />
+                </div>
+                {/* Name */}
+                <h3 className='stat-name'>Training Staff</h3>
+                {/* Number */}
 
-              <span
-                style={{ fontSize: '52px', fontWeight: '900', color: 'red' }}
-              >
-                {' '}
-                5+
-              </span>
-            </div>
-            <div
-              className='stats-card'
-              style={{
-                width: '30%',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                border: '1px solid #0080001c',
-                cursor: 'pointer',
-              }}
-            >
-              <div
-                style={{
-                  width: '100%',
-                  display: 'flex',
-                  justifyContent: ' center',
-                }}
-              >
-                {/* svg */}
-                <StadiumSVG
-                  // fill='#008001'
-                  fill='yellow'
-                  width={'50%'}
-                />
-                {/* <img
+                <span className='stat-number'> 5+</span>
+              </div>
+              <div className='stats-card'>
+                <div className='icon-wrapper'>
+                  {/* svg */}
+                  <StadiumSVG
+                    // fill='#008001'
+                    fill='white'
+                    width={'50%'}
+                    className='icon'
+                  />
+                  {/* <img
                   style={{ width: '66%' }}
                   // src='/svg/stadium-green-edited.jpg'
                   src='/svg/stadium-black-edited.jpg'
                   alt='stadium'
                 /> */}
-              </div>
-              {/* Name */}
-              <h3
-                style={{
-                  fontSize: ' 37px',
-                  marginBlock: '0',
-                  marginBottom: '10px',
-                  color: 'yellow',
-                }}
-              >
-                Location
-              </h3>
-              {/* Number */}
+                </div>
+                {/* Name */}
+                <h3 className='stat-name'>Location</h3>
+                {/* Number */}
 
-              <span
-                style={{ fontSize: '150%', fontWeight: '900', color: 'red' }}
-              >
-                {' '}
-                Abebe Bikila Stadium
-              </span>
+                <span className='stat-number' style={{ fontSize: '150%' }}>
+                  {' '}
+                  Abebe Bikila Stadium
+                </span>
+              </div>
             </div>
           </div>
         </div>

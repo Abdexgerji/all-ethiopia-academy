@@ -1,10 +1,11 @@
-const CoachSVG = ({ style, width, height, fill }) => {
+const CoachSVG = ({ style, width, height, fill, className }) => {
   return (
     <svg
       style={{ ...style }}
       width={width}
       height={height}
       fill={fill}
+      className={className}
       xmlns='http://www.w3.org/2000/svg'
       shapeRendering='geometricPrecision'
       textRendering='geometricPrecision'

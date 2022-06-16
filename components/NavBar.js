@@ -6,13 +6,12 @@ const NavBar = () => {
   const router = useRouter();
   return (
     <nav>
-      <li>
-        <Link href='/'>
-          <a>
-            <img src='/pictures/logo.jpg' alt='bunna logo' />
-          </a>
-        </Link>
-      </li>
+      <Link href='/'>
+        <a>
+          <img src='/pictures/logo.jpg' alt='bunna logo' />
+        </a>
+      </Link>
+
       <div className='nav-div'>
         <ul className='nav-ul'>
           <li>

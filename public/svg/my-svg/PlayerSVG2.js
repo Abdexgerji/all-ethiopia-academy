@@ -1,10 +1,11 @@
-const PlayerSVG2 = ({ style, width, height, fill }) => {
+const PlayerSVG2 = ({ style, width, height, fill, className }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
       version='1.1'
       viewBox='0 0 284.557 512'
       style={{ ...style }}
+      className={className}
       height={height}
       width={width}
     >
