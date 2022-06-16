@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <NavBar />
-      <div style={{ minHeight: 'calc(100vh - 97px)' }}>
+      <div style={{ minHeight: 'calc(100vh - 97px)', marginTop: '50px' }}>
         <Component {...pageProps} />;
       </div>
       <Footer />

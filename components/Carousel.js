@@ -13,6 +13,7 @@ const CarouselComponent = () => {
     >
       <Carousel
         infiniteLoop
+        // animationHandler={'fade'}
         showThumbs={false}
         dynamicHeight={false}
         autoPlay={true}
@@ -25,21 +26,21 @@ const CarouselComponent = () => {
         <div>
           <img
             style={{ objectFit: 'cover' }}
-            height='400' //! this height is the height of the carousel
+            height='500' //! this height is the height of the carousel
             src='/pictures/img4-croped.jpg'
           />
         </div>
         <div>
           <img
             style={{ objectFit: 'cover' }}
-            height='400' //! this height is the height of the carousel
+            height='500' //! this height is the height of the carousel
             src='/pictures/img5.jpg'
           />
         </div>
         <div>
           <img
             style={{ objectFit: 'cover', objectPosition: 'top' }}
-            height='400' //! this height is the height of the carousel
+            height='500' //! this height is the height of the carousel
             src='/pictures/img18-croped.jpg'
           />
         </div>

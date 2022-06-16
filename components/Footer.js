@@ -1,7 +1,9 @@
 const Footer = () => {
   return (
     <>
-      <footer>footer</footer>
+      <footer style={{ display: 'flex', justifyContent: 'center' }}>
+        <div>&copy; All Ethiopia Soccer Academy</div>
+      </footer>
     </>
   );
 };

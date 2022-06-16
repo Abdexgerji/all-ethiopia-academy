@@ -1,7 +1,7 @@
 const CoachSVG = ({ style, width, height, fill }) => {
   return (
     <svg
-      style={{ style }}
+      style={{ ...style }}
       width={width}
       height={height}
       fill={fill}

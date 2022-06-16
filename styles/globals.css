@@ -42,23 +42,38 @@ a {
 }
 
 .grass-background {
-  background-image: url(/pictures/daniel-norin-lBhhnhndpE0-unsplash.jpg);
+  background-position: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  position: fixed !important;
+  bottom: 0 !important;
+  top: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
+  object-fit: cover;
+  object-position: center;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(
-    24deg,
-    var(--my-yellow-color) 4%,
-    var(--my-red-color) 101%
-  );
+  background: linear-gradient(linear-gradient(225deg, #f7f70030, #e7000a42));
   align-items: center;
-  box-shadow: 1px 0px 11px 1px #6e0000bf;
+  box-shadow: 0 0px 19px 0px #ffffff66;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  backdrop-filter: blur(2.5px);
+  z-index: 3;
+  border-radius: 7px;
 }
 
 .nav-div {
-  margin-right: 5px;
+  margin-right: 15px;
 }
 
 nav img {
@@ -75,13 +90,25 @@ nav img {
 
 nav li {
   list-style: none;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 nav li a {
   text-decoration: none;
   color: var(--my-yellow-color);
   color: white;
+
+  /* FOR transform to work inline-block */
+  display: inline-block;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+nav li a:hover,
+nav li a:active {
+  color: var(--my-yellow-color);
+  /* transform: scale(1.1); */
+  font-weight: 700;
+  border-bottom: 1px solid var(--my-yellow-color);
 }
 
 .logo-div {
@@ -94,14 +121,21 @@ nav li a {
 .first-view {
   min-height: calc(100vh - 53px);
 }
+
+.current-page {
+  border-bottom: 1px solid white;
+}
+
 footer {
-  background: linear-gradient(
-    188deg,
-    var(--my-yellow-color) 4%,
-    var(--my-red-color) 101%
-  );
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(linear-gradient(225deg, #f7f70030, #e7000a42));
+  align-items: center;
+  box-shadow: 0 0px 19px 0px #ffffff66;
+  backdrop-filter: blur(2.5px);
+  border-radius: 7px;
   color: white;
-  padding: 11px;
+  padding: 20px;
 }
 
 .home-main {
@@ -129,13 +163,14 @@ footer {
 }
 
 .news-card {
-  border: 1px solid beige;
+  /* border: 1px solid beige; */
   width: 30%;
   padding: 4px;
   cursor: pointer;
-  box-shadow: 0px 1.5px 7px -1px #ffff006e;
+  box-shadow: 0px 1.5px 7px -1px #ffff00;
   transition: transform 0.3s, box-shadow 0.3s;
   border-radius: 20px;
+  backdrop-filter: blur(3.5px);
 }
 
 .news-card:hover,
@@ -169,4 +204,36 @@ footer {
 .stats-card:active {
   box-shadow: 0px 6.5px 25px -2px #ffff00b0;
   transform: scale(1.04);
+}
+
+.yellow-red-font-style {
+  color: yellow;
+  text-shadow: 6px 4px 4px #ff1f1f5e;
+}
+
+.image-wrapper img {
+  padding: 10px !important;
+  border-radius: 20px;
+}
+
+.coach-card {
+  box-shadow: 0px 0px 7px 0px #ffffffba;
+
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.coach-card:hover,
+.coach-card:active {
+  transform: translateY(-12px);
+  box-shadow: 0 4px 30px #ffff00b0;
+}
+
+.news-button {
+  box-shadow: 0px 0px 7px 0px #ffffffba;
+  transition: all 0.5s;
+}
+.news-button:hover,
+.news-button:active {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 30px #ffff00b0;
 }
