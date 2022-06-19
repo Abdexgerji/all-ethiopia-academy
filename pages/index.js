@@ -73,6 +73,7 @@ export default function Home() {
             }}
           >
             <h1
+              className='animate-fade-in-up'
               style={{
                 marginBlock: '0',
                 fontSize: 'max(4vw,30px)',
@@ -209,27 +210,26 @@ export default function Home() {
 
         {/* // sxn the team*/}
 
-        <section>
+        <section style={{ marginBottom: '30px' }}>
           <h2
             style={{ margin: '23px 0', fontSize: '37px', textAlign: 'center' }}
           >
             The Team
           </h2>
-
-          {/* //sxn khalid sxn */}
-          <div style={{ display: 'flex' }}>
-            <div
-              style={{
-                width: '50%',
-                borderRight: '1px solid black',
-                paddingRight: '50px',
-              }}
-            >
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1px 1fr',
+              gridColumnGap: '50px',
+            }}
+          >
+            <div>
+              {' '}
               <div
                 className='image-wrapper'
                 style={{
                   position: 'relative',
-                  width: '50%',
+                  width: '42%',
                   aspectRatio: '440/500',
                   marginLeft: 'auto',
                 }}
@@ -248,96 +248,110 @@ export default function Home() {
                   objectPosition='top'
                 />
               </div>
-              {/* <img src='/pictures/coach-khalid-cropped.jpg' alt='' /> */}
             </div>
-            <div style={{ width: '50%', marginLeft: '50px' }}>
-              <h3 style={{ fontSize: 'max(1.7vw,18px)' }}>
-                Coach Khalid Mohammed
-              </h3>
-              <h5
-                style={{
-                  marginTop: '-14px',
-                  color: '#9e9e9ead',
-                  fontWeight: '500',
-                  fontSize: '17px',
-                  marginBottom: '2px',
-                }}
-              >
-                Chief Executive Manager
-              </h5>
-              <ul style={{ marginLeft: '25px', marginBlock: '32px' }}>
-                <li>Former Bunna Player</li>
-                <li>Former Bunna Coach </li>
-                <li>Youth team premier league head coach</li>
-                <li>Ethiopian premier league champion</li>
-              </ul>
-              <button
-                style={{
-                  border: 'none',
-                  background: 'none',
-                  color: '#920b00',
-                  textDecoration: 'underline 2px',
-                  textUnderlinePosition: 'under',
-                  fontSize: '15px',
-                  cursor: 'pointer',
-                  marginLeft: '71px',
-                }}
-              >
-                More
-              </button>
+
+            {/*vertical divider line  */}
+            <div
+              style={{ width: '1px', height: '100%', background: '#00000033' }}
+            ></div>
+            <div>
+              {' '}
+              <div style={{ width: '50%' }}>
+                <h3 style={{ fontSize: 'max(1.7vw,18px)' }}>
+                  Coach Khalid Mohammed
+                </h3>
+                <h5
+                  style={{
+                    marginTop: '-14px',
+                    color: '#9e9e9ead',
+                    fontWeight: '500',
+                    fontSize: '17px',
+                    marginBottom: '2px',
+                  }}
+                >
+                  Chief Executive Manager
+                </h5>
+                <ul style={{ marginLeft: '25px', marginBlock: '32px' }}>
+                  <li>Former Bunna Player</li>
+                  <li>Former Bunna Coach </li>
+                  <li>Youth team premier league head coach</li>
+                  <li>Ethiopian premier league champion</li>
+                </ul>
+                <button
+                  style={{
+                    border: 'none',
+                    background: 'none',
+                    color: '#920b00',
+                    textDecoration: 'underline 2px',
+                    textUnderlinePosition: 'under',
+                    fontSize: '15px',
+                    cursor: 'pointer',
+                    marginLeft: '32px',
+                  }}
+                >
+                  More
+                </button>
+              </div>
             </div>
           </div>
-
-          {/* //sxn abdulkerim sxn */}
-          <div style={{ display: 'flex', marginTop: '15px' }}>
-            <div style={{ width: '50%', marginRight: '50px' }}>
-              <h3 style={{ fontSize: 'max(1.7vw,18px)' }}>
-                Coach Khalid Mohammed
-              </h3>
-              <h5
-                style={{
-                  marginTop: '-14px',
-                  color: '#9e9e9ead',
-                  fontWeight: '500',
-                  fontSize: '17px',
-                  marginBottom: '2px',
-                }}
-              >
-                Chief Executive Manager
-              </h5>
-              <ul style={{ marginLeft: '25px', marginBlock: '32px' }}>
-                <li>Former Bunna Player</li>
-                <li>Former Bunna Coach </li>
-                <li>Youth team premier league head coach</li>
-                <li>Ethiopian premier league champion</li>
-              </ul>
-              <button
-                style={{
-                  border: 'none',
-                  background: 'none',
-                  color: '#920b00',
-                  textDecoration: 'underline 2px',
-                  textUnderlinePosition: 'under',
-                  fontSize: '15px',
-                  cursor: 'pointer',
-                  marginLeft: '71px',
-                }}
-              >
-                More
-              </button>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1px 1fr',
+              gridColumnGap: '50px',
+              marginTop: '50px',
+            }}
+          >
+            <div>
+              {' '}
+              <div style={{ width: '50%', marginLeft: 'auto' }}>
+                <h3 style={{ fontSize: 'max(1.7vw,18px)' }}>
+                  Coach Abdulkerim Hassen
+                </h3>
+                <h5
+                  style={{
+                    marginTop: '-14px',
+                    color: '#9e9e9ead',
+                    fontWeight: '500',
+                    fontSize: '17px',
+                    marginBottom: '2px',
+                  }}
+                >
+                  Vice Executive Manager
+                </h5>
+                <ul style={{ marginLeft: '25px', marginBlock: '32px' }}>
+                  <li>Former Bunna Player</li>
+                  <li>Former Bunna Coach </li>
+                  <li>Youth team premier league head coach</li>
+                  <li>Ethiopian premier league champion</li>
+                </ul>
+                <button
+                  style={{
+                    border: 'none',
+                    background: 'none',
+                    color: '#920b00',
+                    textDecoration: 'underline 2px',
+                    textUnderlinePosition: 'under',
+                    fontSize: '15px',
+                    cursor: 'pointer',
+                    marginLeft: '32px',
+                  }}
+                >
+                  More
+                </button>
+              </div>
             </div>
+            {/*vertical divider line  */}
             <div
-              style={{
-                width: '50%',
-                borderLeft: '1px solid black',
-                paddingLeft: '50px',
-              }}
-            >
+              style={{ width: '1px', height: '100%', background: '#00000033' }}
+            ></div>
+            <div>
+              {' '}
               <div
                 className='image-wrapper'
                 style={{
                   position: 'relative',
-                  width: '50%',
+                  width: '42%',
                   aspectRatio: '440/500',
                   marginRight: 'auto',
                 }}
@@ -345,7 +359,7 @@ export default function Home() {
                 <Image
                   // loader={myLoader}
                   src='/pictures/coach-abdulkerim.jpg'
-                  alt='Coach Khalid'
+                  alt='Coach Abdulkerim'
                   layout='fill'
                   style={
                     {
@@ -356,145 +370,115 @@ export default function Home() {
                   objectPosition='top'
                 />
               </div>
-              {/* <img src='/pictures/coach-khalid-cropped.jpg' alt='' /> */}
             </div>
           </div>
         </section>
 
         {/* // sxn news*/}
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <h2
-            style={{ margin: '3px 0', fontSize: '37px', marginBottom: '10px' }}
-            className=''
+        <section style={{ background: '#00000005', paddingBottom: '1px' }}>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <h2
+              style={{
+                margin: '23px 0',
+                fontSize: '37px',
+                marginBottom: '10px',
+              }}
+              className=''
+            >
+              Latest News
+            </h2>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-evenly',
+            }}
           >
-            Latest News
-          </h2>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-evenly',
-          }}
-        >
-          <div className='news-card'>
-            {/* <img
+            <div className='news-card'>
+              {/* <img
               className='news-card-image'
               src='/pictures/logo.jpg'
               alt='news image'
             /> */}
-            <div
-              className='image-wrapper'
-              style={{
-                position: 'relative',
-                width: '100%',
-                aspectRatio: '7/5',
-              }}
-            >
-              <Image
-                // loader={myLoader}
-                src='/pictures/ethiopia-vs-egypt.jpg'
-                alt='Ethiopia Vs Egypt'
-                layout='fill'
+              <div
+                className='image-wrapper'
                 style={{
-                  borderTopRightRadius: '16px',
-                  borderTopLeftRadius: '16px',
+                  position: 'relative',
+                  width: '100%',
+                  aspectRatio: '7/5',
                 }}
-                objectFit='cover'
-              />
+              >
+                <Image
+                  // loader={myLoader}
+                  src='/pictures/ethiopia-vs-egypt.jpg'
+                  alt='Ethiopia Vs Egypt'
+                  layout='fill'
+                  className='news-card-image'
+                  objectFit='cover'
+                />
+              </div>
+              <h5 className='text-center news-card-header'>
+                Ethiopia vs Egypt
+              </h5>
+              <p className='news-card-description text-center'>
+                Ethiopia defeated egypt for AFCON qualifiers
+              </p>
+              <p className='news-card-date'>June 22, 2021</p>
             </div>
-            <h5
-              className='text-center '
-              style={{ fontSize: '25px', margin: '5px 0' }}
-            >
-              Ethiopia vs Egypt
-            </h5>
-            <p style={{}} className='text-center'>
-              Ethiopia defeated egypt for AFCON qualifiers
-            </p>
-          </div>
-          <div className='news-card'>
-            <div
-              className='image-wrapper'
-              style={{
-                position: 'relative',
-                width: '100%',
-                aspectRatio: '7/5',
-              }}
-            >
-              <Image
-                // loader={myLoader}
-                src='/pictures/logo.jpg'
-                alt='All Ethiopia Soccer Academy'
-                layout='fill'
+            <div className='news-card'>
+              <div
+                className='image-wrapper'
                 style={{
-                  borderTopRightRadius: '16px',
-                  borderTopLeftRadius: '16px',
+                  position: 'relative',
+                  width: '100%',
+                  aspectRatio: '7/5',
                 }}
-                objectFit='cover'
-              />
-            </div>
+              >
+                <Image
+                  // loader={myLoader}
+                  src='/pictures/logo.jpg'
+                  alt='All Ethiopia Soccer Academy'
+                  layout='fill'
+                  className='news-card-image'
+                  objectFit='cover'
+                />
+              </div>
 
-            <h5
-              className='text-center '
-              style={{ fontSize: '25px', margin: '5px 0' }}
-            >
-              All Ethiopia Soccer Academy
-            </h5>
-            <p style={{}} className='text-center'>
-              Our organization is planning on a mega project
-            </p>
-          </div>
-          <div className='news-card'>
-            <div
-              className='image-wrapper'
-              style={{
-                position: 'relative',
-                width: '100%',
-                aspectRatio: '7/5',
-              }}
-            >
-              <Image
-                // loader={myLoader}
-                src='/pictures/logo.jpg'
-                alt='All Ethiopia Soccer Academy'
-                layout='fill'
-                style={{
-                  borderTopRightRadius: '16px',
-                  borderTopLeftRadius: '16px',
-                }}
-                objectFit='cover'
-              />
+              <h5 className='text-center news-card-header'>
+                All Ethiopia Soccer Academy
+              </h5>
+              <p className='news-card-description text-center'>
+                Our organization is planning on a mega project
+              </p>
+              <p className='news-card-date'>Jan 02, 2022</p>
             </div>
-            <h5
-              className='text-center '
-              style={{ fontSize: '25px', margin: '5px 0' }}
-            >
-              News 3
-            </h5>
-            <p style={{}} className='text-center'>
-              News 3 details.....
-            </p>
+            <div className='news-card'>
+              <div
+                className='image-wrapper'
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  aspectRatio: '7/5',
+                }}
+              >
+                <Image
+                  // loader={myLoader}
+                  src='/pictures/logo.jpg'
+                  alt='All Ethiopia Soccer Academy'
+                  layout='fill'
+                  className='news-card-image'
+                  objectFit='cover'
+                />
+              </div>
+              <h5 className='text-center news-card-header'>News 3</h5>
+              <p className='news-card-description text-center'>
+                News 3 details.....
+              </p>
+              <p className='news-card-date'>Dec 17, 2021</p>
+            </div>
           </div>
-        </div>
-        <button
-          className='news-button'
-          style={{
-            padding: '9px 22px',
-            margin: 'auto',
-            display: 'block',
-            marginBlock: '39px',
-            color: 'white',
-            fontSize: '22px',
-            fontWeight: '600',
-            background: 'rgba(255, 255, 255, 0.2)',
-            borderRadius: '16px',
-            backdropFilter: 'blur(4px)',
-            border: '1px solid rgba(255, 255, 255, 0.3)',
-            cursor: 'pointer',
-          }}
-        >
-          More News
-        </button>
+          <button className='news-button'>More News</button>
+        </section>
       </main>
     </>
   );
