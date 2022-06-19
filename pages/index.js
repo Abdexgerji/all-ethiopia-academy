@@ -50,16 +50,17 @@ export default function Home() {
       <Head>
         <title>Ethiopian Bunna</title>
         <meta name='description' content='All Ethiopia Soccer Academy' />
-        <link rel='icon' href='/pictures/logo.jpg' />
+        <link rel='icon' href='/pictures/logo.ico' />
       </Head>
 
       <main className='home-main'>
-        <div
+        <section
           className='first-view'
           style={{
             display: 'flex',
           }}
         >
+          {/* h1 wrapper */}
           <div
             style={{
               display: 'flex',
@@ -84,7 +85,7 @@ export default function Home() {
                 padding: '2px',
                 backdropFilter: 'blur(1px)',
               }}
-              // className='yellow-red-font-style'
+              // className=''
             >
               All Ethiopia Soccer Academy
             </h1>
@@ -97,9 +98,9 @@ export default function Home() {
           >
             <CarouselComponent />
           </div>
-        </div>
+        </section>
         {/* // sxn short about */}
-        <div className='second-view full-vh'>
+        <section className='second-view full-vh'>
           <div className='text-wrapper'>
             <h2>Best Soccer Academy In Ethiopia</h2>
             <p>
@@ -124,10 +125,10 @@ export default function Home() {
               objectFit='cover'
             />
           </div>
-        </div>
+        </section>
 
         {/* // sxn stats*/}
-        <div className='stat-wrapper'>
+        <section className='stat-wrapper'>
           {/* background image of grass*/}
           {/* //future should try parallax with this one instead of using background-image*/}
           <div
@@ -135,20 +136,10 @@ export default function Home() {
               background: 'url(/pictures/soccer-field.webp)',
               backgroundSize: 'cover',
               backgroundPosition: 'bottom',
-              backgroundAttachment: 'fixed',
+              backgroundAttachment: 'fixed', //for parallx effect
             }}
             className='next-image-wrapper'
-          >
-            {/* <Image
-              // loader={myLoader}
-              src='/pictures/soccer-field.jpg'
-              alt='Training Image'
-              layout='fill'
-              style={{ position: 'absolute' }}
-              objectFit='cover'
-              objectPosition='bottom'
-            /> */}
-          </div>
+          ></div>
 
           <div
             style={{
@@ -159,18 +150,6 @@ export default function Home() {
               height: '100%',
             }}
           >
-            {/* <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <h2
-              style={{
-                margin: '3px 0',
-                fontSize: '37px',
-                marginBottom: '20px',
-              }}
-              className='yellow-red-font-style'
-            >
-              Stats
-            </h2>
-          </div> */}
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <div className='stats-card'>
                 <div className='icon-wrapper'>
@@ -214,15 +193,9 @@ export default function Home() {
                     width={'50%'}
                     className='icon'
                   />
-                  {/* <img
-                  style={{ width: '66%' }}
-                  // src='/svg/stadium-green-edited.jpg'
-                  src='/svg/stadium-black-edited.jpg'
-                  alt='stadium'
-                /> */}
                 </div>
                 {/* Name */}
-                <h3 className='stat-name'>Location</h3>
+                <h3 className='stat-name'>Stadium</h3>
                 {/* Number */}
 
                 <span className='stat-number' style={{ fontSize: '150%' }}>
@@ -232,87 +205,141 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
-        {/* // sxn coach*/}
+        </section>
 
-        <div
-          style={{
-            minHeight: '100vh',
-            // backdropFilter: 'blur(4px)'
-          }}
-        >
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <h2
-              style={{ margin: '3px 0', fontSize: '37px' }}
-              className='yellow-red-font-style'
-            >
-              Training Staff
-            </h2>
-          </div>
-          {/* //sxn coach cards */}
-          <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        {/* // sxn the team*/}
+
+        <section>
+          <h2
+            style={{ margin: '23px 0', fontSize: '37px', textAlign: 'center' }}
+          >
+            The Team
+          </h2>
+
+          {/* //sxn khalid sxn */}
+          <div style={{ display: 'flex' }}>
             <div
               style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                width: '25%',
-                background: 'rgba(255, 255, 255, 0.2)',
-                borderRadius: '16px',
-                backdropFilter: 'blur(4px)',
-                WebkitBackdropFilter: 'blur(5px)',
-                border: '1px solid rgba(255, 255, 255, 0.3)',
+                width: '50%',
+                borderRight: '1px solid black',
+                paddingRight: '50px',
               }}
-              className='coach-card'
             >
               <div
                 className='image-wrapper'
                 style={{
                   position: 'relative',
-                  width: '100%',
-                  aspectRatio: '7/5',
+                  width: '50%',
+                  aspectRatio: '440/500',
+                  marginLeft: 'auto',
                 }}
               >
                 <Image
                   // loader={myLoader}
-                  src='/pictures/coach-khalid.jpg'
+                  src='/pictures/coach-khalid-cropped.jpg'
                   alt='Coach Khalid'
                   layout='fill'
-                  style={{
-                    borderTopRightRadius: '16px',
-                    borderTopLeftRadius: '16px',
-                  }}
+                  style={
+                    {
+                      // transform: 'scaleX(-1)', // to flip image horizontally
+                    }
+                  }
                   objectFit='cover'
+                  objectPosition='top'
                 />
               </div>
-              <h3 style={{ color: primaryYellow, marginBlock: '2px' }}>
-                Khalid MOHAMMED
+              {/* <img src='/pictures/coach-khalid-cropped.jpg' alt='' /> */}
+            </div>
+            <div style={{ width: '50%', marginLeft: '50px' }}>
+              <h3 style={{ fontSize: 'max(1.7vw,18px)' }}>
+                Coach Khalid Mohammed
               </h3>
-              <p style={{ fontWeight: 'bold', color: 'white' }}>
-                Chief excutive manager
-              </p>
-              <p>About</p>
+              <h5
+                style={{
+                  marginTop: '-14px',
+                  color: '#9e9e9ead',
+                  fontWeight: '500',
+                  fontSize: '17px',
+                  marginBottom: '2px',
+                }}
+              >
+                Chief Executive Manager
+              </h5>
+              <ul style={{ marginLeft: '25px', marginBlock: '32px' }}>
+                <li>Former Bunna Player</li>
+                <li>Former Bunna Coach </li>
+                <li>Youth team premier league head coach</li>
+                <li>Ethiopian premier league champion</li>
+              </ul>
+              <button
+                style={{
+                  border: 'none',
+                  background: 'none',
+                  color: '#920b00',
+                  textDecoration: 'underline 2px',
+                  textUnderlinePosition: 'under',
+                  fontSize: '15px',
+                  cursor: 'pointer',
+                  marginLeft: '71px',
+                }}
+              >
+                More
+              </button>
+            </div>
+          </div>
+
+          {/* //sxn abdulkerim sxn */}
+          <div style={{ display: 'flex', marginTop: '15px' }}>
+            <div style={{ width: '50%', marginRight: '50px' }}>
+              <h3 style={{ fontSize: 'max(1.7vw,18px)' }}>
+                Coach Khalid Mohammed
+              </h3>
+              <h5
+                style={{
+                  marginTop: '-14px',
+                  color: '#9e9e9ead',
+                  fontWeight: '500',
+                  fontSize: '17px',
+                  marginBottom: '2px',
+                }}
+              >
+                Chief Executive Manager
+              </h5>
+              <ul style={{ marginLeft: '25px', marginBlock: '32px' }}>
+                <li>Former Bunna Player</li>
+                <li>Former Bunna Coach </li>
+                <li>Youth team premier league head coach</li>
+                <li>Ethiopian premier league champion</li>
+              </ul>
+              <button
+                style={{
+                  border: 'none',
+                  background: 'none',
+                  color: '#920b00',
+                  textDecoration: 'underline 2px',
+                  textUnderlinePosition: 'under',
+                  fontSize: '15px',
+                  cursor: 'pointer',
+                  marginLeft: '71px',
+                }}
+              >
+                More
+              </button>
             </div>
             <div
               style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                width: '25%',
-                background: 'rgba(255, 255, 255, 0.2)',
-                borderRadius: '16px',
-                backdropFilter: 'blur(4px)',
-                WebkitBackdropFilter: 'blur(5px)',
-                border: '1px solid rgba(255, 255, 255, 0.3)',
+                width: '50%',
+                borderLeft: '1px solid black',
+                paddingLeft: '50px',
               }}
-              className='coach-card'
             >
               <div
                 className='image-wrapper'
                 style={{
                   position: 'relative',
-                  width: '100%',
-                  aspectRatio: '7/5',
+                  width: '50%',
+                  aspectRatio: '440/500',
+                  marginRight: 'auto',
                 }}
               >
                 <Image
@@ -320,48 +347,25 @@ export default function Home() {
                   src='/pictures/coach-abdulkerim.jpg'
                   alt='Coach Khalid'
                   layout='fill'
-                  style={{
-                    borderTopRightRadius: '16px',
-                    borderTopLeftRadius: '16px',
-                    padding: '9px !important',
-                  }}
+                  style={
+                    {
+                      // transform: 'scaleX(-1)', // to flip image horizontally
+                    }
+                  }
                   objectFit='cover'
                   objectPosition='top'
                 />
               </div>
-              <h3 style={{ color: primaryYellow, marginBlock: '2px' }}>
-                ABDULKERIM HASSEN
-              </h3>
-              <p>Vice excutive manager</p>
-              <p>About</p>
+              {/* <img src='/pictures/coach-khalid-cropped.jpg' alt='' /> */}
             </div>
           </div>
-          <button
-            className='news-button'
-            style={{
-              padding: '9px 22px',
-              margin: 'auto',
-              display: 'block',
-              marginBlock: '39px',
-              color: 'white',
-              fontSize: '22px',
-              fontWeight: '600',
-              background: 'rgba(255, 255, 255, 0.2)',
-              borderRadius: '16px',
-              backdropFilter: 'blur(4px)',
-              border: '1px solid rgba(255, 255, 255, 0.3)',
-              cursor: 'pointer',
-            }}
-          >
-            Learn More
-          </button>
-        </div>
+        </section>
 
         {/* // sxn news*/}
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <h2
             style={{ margin: '3px 0', fontSize: '37px', marginBottom: '10px' }}
-            className='yellow-red-font-style'
+            className=''
           >
             Latest News
           </h2>
@@ -399,12 +403,12 @@ export default function Home() {
               />
             </div>
             <h5
-              className='text-center yellow-red-font-style'
+              className='text-center '
               style={{ fontSize: '25px', margin: '5px 0' }}
             >
               Ethiopia vs Egypt
             </h5>
-            <p style={{ color: 'white' }} className='text-center'>
+            <p style={{}} className='text-center'>
               Ethiopia defeated egypt for AFCON qualifiers
             </p>
           </div>
@@ -431,12 +435,12 @@ export default function Home() {
             </div>
 
             <h5
-              className='text-center yellow-red-font-style'
+              className='text-center '
               style={{ fontSize: '25px', margin: '5px 0' }}
             >
               All Ethiopia Soccer Academy
             </h5>
-            <p style={{ color: 'white' }} className='text-center'>
+            <p style={{}} className='text-center'>
               Our organization is planning on a mega project
             </p>
           </div>
@@ -462,12 +466,12 @@ export default function Home() {
               />
             </div>
             <h5
-              className='text-center yellow-red-font-style'
+              className='text-center '
               style={{ fontSize: '25px', margin: '5px 0' }}
             >
               News 3
             </h5>
-            <p style={{ color: 'white' }} className='text-center'>
+            <p style={{}} className='text-center'>
               News 3 details.....
             </p>
           </div>
@@ -494,4 +498,86 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+// ! old stuff
+{
+  /* <div
+style={{
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  width: '25%',
+  background: 'rgba(255, 255, 255, 0.2)',
+  borderRadius: '16px',
+  backdropFilter: 'blur(4px)',
+  WebkitBackdropFilter: 'blur(5px)',
+  border: '1px solid rgba(255, 255, 255, 0.3)',
+}}
+className='coach-card'
+>
+<div
+  className='image-wrapper'
+  style={{
+    position: 'relative',
+    width: '100%',
+    aspectRatio: '7/5',
+  }}
+>
+  <Image
+    // loader={myLoader}
+    src='/pictures/coach-khalid.jpg'
+    alt='Coach Khalid'
+    layout='fill'
+    style={{
+      borderTopRightRadius: '16px',
+      borderTopLeftRadius: '16px',
+    }}
+    objectFit='cover'
+  />
+</div>
+<h3 style={{ marginBlock: '2px' }}>Khalid MOHAMMED</h3>
+<p style={{ fontWeight: 'bold' }}>Chief excutive manager</p>
+<p>About</p>
+</div>
+<div
+style={{
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  width: '25%',
+  background: 'rgba(255, 255, 255, 0.2)',
+  borderRadius: '16px',
+  backdropFilter: 'blur(4px)',
+  WebkitBackdropFilter: 'blur(5px)',
+  border: '1px solid rgba(255, 255, 255, 0.3)',
+}}
+className='coach-card'
+>
+<div
+  className='image-wrapper'
+  style={{
+    position: 'relative',
+    width: '100%',
+    aspectRatio: '7/5',
+  }}
+>
+  <Image
+    // loader={myLoader}
+    src='/pictures/coach-abdulkerim.jpg'
+    alt='Coach Khalid'
+    layout='fill'
+    style={{
+      borderTopRightRadius: '16px',
+      borderTopLeftRadius: '16px',
+      padding: '9px !important',
+    }}
+    objectFit='cover'
+    objectPosition='top'
+  />
+</div>
+<h3 style={{ marginBlock: '2px' }}>ABDULKERIM HASSEN</h3>
+<p>Vice excutive manager</p>
+<p>About</p>
+</div> */
 }
