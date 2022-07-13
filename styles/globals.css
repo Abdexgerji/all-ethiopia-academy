@@ -13,6 +13,7 @@ a {
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 /* ///////////////////////////////// */
@@ -37,58 +38,54 @@ a {
 
   --primary-color: #920b00;
 }
+
 * {
   /* margin: 0; */
   padding: 0;
   box-sizing: border-box;
 }
 
-.grass-background {
-  background-position: center;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  position: fixed !important;
-  bottom: 0 !important;
-  top: 0 !important;
-  right: 0 !important;
-  left: 0 !important;
-  object-fit: cover;
-  object-position: center;
+.horizontal-padding-for-whole-site {
+  padding-inline: max(4vw, 20px);
 }
 
-nav {
+.current-page {
+  border-bottom: 1px solid black;
+}
+
+.margin-left-auto {
+  margin-left: auto;
+}
+.margin-right-auto {
+  margin-right: auto;
+}
+
+/* sxn header */
+
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 0px 6px 0px #24212126;
-  padding: 0 17px;
-}
-
-.nav-div {
-  margin-right: 15px;
 }
 
 /* logo */
-nav img {
+header img {
   width: 150px;
   height: auto;
-  padding: 5px;
+  padding-block: 5px;
 }
 
 .nav-ul {
   display: flex;
 }
 
-nav li {
+header li {
   list-style: none;
-  padding: 0 1vw;
+  padding-left: 25px;
 }
 
-nav li a {
+header li a {
   text-decoration: none;
 
   /* FOR transform to work inline-block */
@@ -97,8 +94,8 @@ nav li a {
   transition: all 0.3s;
 }
 
-nav li a:hover,
-nav li a:active {
+header li a:hover,
+header li a:active {
   color: lightgray;
   border-color: lightgray;
 }
@@ -110,14 +107,629 @@ nav li a:active {
   padding: 5px;
 }
 
-.first-view {
-  min-height: calc(100vh - 53px);
+.menu-svg {
+  display: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.menu-svg:active,
+.menu-svg:focus {
+  background-color: rgba(211, 211, 211, 0.333);
+  border-radius: 3px;
 }
 
-.current-page {
-  border-bottom: 1px solid black;
+@media screen and (max-width: 600px) {
+  nav {
+    display: none;
+  }
+  .menu-svg {
+    display: block;
+  }
 }
 
+/* css after the figma design */
+
+/* sxn first section */
+.first-section-wrapper {
+  background-image: url('/pictures/hero-bg.jpg');
+  background-size: cover;
+  position: relative;
+  height: calc(100vh - 45px);
+  z-index: -2;
+}
+
+/* to make the bg-img darker */
+.first-section-wrapper::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.562);
+  z-index: -1;
+}
+
+.first-section h3 {
+  margin: 0;
+  font-size: max(1.57vw, 10px);
+  font-size: 18px;
+  color: white;
+  letter-spacing: 5px;
+  font-weight: 400;
+}
+
+.first-section .left-content {
+  transform: translateY(5em);
+}
+
+.first-section h1 {
+  font-size: max(5.16vw, 55px);
+  font-size: 60px;
+  width: 50%;
+  color: white;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.first-section .star-svg-wrapper {
+  position: relative;
+}
+
+.stars-h1 {
+  font-size: 66px;
+  width: 42%;
+  color: white;
+  margin: 0;
+}
+.first-section .underline-svg {
+  z-index: -1;
+  position: absolute;
+  bottom: 3px;
+  left: -5px;
+  stroke: var(--primary-color);
+  width: 162px;
+}
+.first-section .arrow-down-svg {
+  margin-left: 193px;
+  margin-top: 60px;
+}
+
+@media screen and (max-width: 980px) {
+  .first-section h1 {
+    font-size: 60px;
+    width: 60%;
+    letter-spacing: 2px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .first-section h1 {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 710px) {
+  .first-section h1 {
+    width: 100%;
+    letter-spacing: 6px;
+    line-height: 84px;
+  }
+
+  .first-section .left-content {
+    text-align: center;
+  }
+
+  .first-section .arrow-down-svg {
+    margin-left: 0px;
+  }
+  .first-section h3 {
+    transform: translateY(-23px);
+  }
+
+  .first-section h1 {
+    font-size: 50px;
+    width: 85%;
+    margin: auto;
+  }
+
+  .first-section .underline-svg {
+    bottom: -4px;
+    left: -7px;
+    width: 142px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .first-section h1 {
+    font-size: 48px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 463px) {
+  .first-section h1 {
+    font-size: 35px;
+    line-height: 1.9;
+  }
+  .first-section h3 {
+    font-size: 13px;
+  }
+
+  .first-section .underline-svg {
+    bottom: -7px;
+    left: -7px;
+    width: 112px;
+  }
+}
+@media screen and (max-width: 373px) {
+  .first-section h1 {
+    font-size: 29px;
+    line-height: 1.9;
+  }
+  .first-section h3 {
+    font-size: 12px;
+  }
+  .first-section .underline-svg {
+    bottom: -8px;
+    left: -1px;
+    width: 82px;
+  }
+}
+@media screen and (max-width: 373px) {
+  .first-section h1 {
+    font-size: 25px;
+  }
+}
+
+/* sxn second section */
+
+.second-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.second-section .image-wrapper {
+  position: relative;
+  width: 50%;
+  aspect-ratio: 6.2/5;
+}
+.second-section .text-wrapper {
+  width: 50%;
+  margin-top: -46px;
+}
+
+.second-section h2 {
+  font-size: max(3.5vw, 22px);
+  font-weight: 600;
+  color: var(--primary-color);
+  text-transform: capitalize;
+}
+.second-section p {
+  color: #4e4e4e;
+  margin-top: 12px;
+}
+
+@media screen and (max-width: 1020px) {
+  .second-section .image-wrapper {
+    aspect-ratio: 5/5;
+    height: 85vh;
+  }
+}
+@media screen and (max-width: 880px) {
+  .second-section .image-wrapper {
+    height: 80vh;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .second-section {
+    display: grid;
+    height: auto !important;
+  }
+  .second-section .image-wrapper {
+    order: 1;
+    height: 50vh;
+    width: 100vw;
+    margin-bottom: 30px;
+  }
+  .second-section .text-wrapper {
+    margin: 15px 0;
+    width: 100%;
+    margin-top: 0px;
+  }
+}
+
+/* sxn third section / stats */
+.third-section {
+  height: 65vh;
+}
+
+.third-section .parallax-image {
+  background: url(/pictures/soccer-field.webp);
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed; /*for parallx effect*/
+}
+
+.third-section .parallax-image::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.third-section .next-image-wrapper {
+  position: absolute;
+  width: 100%;
+  /* aspect-ratio: 7/4; */
+  height: 65vh;
+}
+
+.third-section .cards-first-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.third-section .cards-second-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stats-card {
+  width: max(250px, 30%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 20px;
+  background: #ffffff24;
+  z-index: 1;
+  transition: all 0.4s;
+}
+
+.stats-card:hover,
+.stats-card:active {
+  transform: scale(1.01);
+}
+.stats-card .icon-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.stats-card .stat-name {
+  font-size: 22px;
+  margin-block: 0;
+  margin-bottom: 10px;
+  color: white;
+}
+.stats-card .stat-number {
+  font-size: 52px;
+  font-weight: 900;
+  color: white;
+}
+.stats-card .stat-number.stadium-name {
+  font-size: 150%;
+}
+
+.icon {
+  aspect-ratio: 1;
+}
+
+@media screen and (max-width: 1000px) {
+  .stats-card .stat-number {
+    font-size: 40px;
+    font-weight: 800;
+  }
+
+  .stats-card .stat-number.stadium-name {
+    font-size: 120%;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .third-section {
+    background: url(/pictures/soccer-field.webp);
+    background-size: cover;
+    padding-block: 92px;
+    position: relative;
+    background-attachment: unset;
+    height: auto;
+  }
+  .third-section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    background: rgb(0 0 0 / 47%);
+    z-index: 0;
+  }
+  .third-section .cards-second-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    row-gap: 42px;
+  }
+
+  .parallax-image {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .third-section .cards-second-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .third-section .stats-card {
+    width: max(70%, 250px);
+  }
+}
+
+/* sxn 4th section / the team */
+.fourth-section {
+  margin-bottom: 30px;
+}
+
+.fourth-section .khalid-grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  grid-column-gap: 50px;
+}
+
+.fourth-section .abdulkerim-grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  grid-column-gap: 50px;
+  margin-top: 50px;
+}
+
+.fourth-section .image-wrapper {
+  position: relative;
+  width: 42%;
+  aspect-ratio: 440/500;
+}
+
+.vertical-divider {
+  width: 1px;
+  height: 100%;
+  background: #00000033;
+}
+
+.fourth-section h3 {
+  font-size: max(1.7vw, 18px);
+}
+.fourth-section h5 {
+  color: #9e9e9ead;
+  font-weight: 500;
+  font-size: 17px;
+  margin-bottom: 2px;
+}
+
+.fourth-section ul {
+  margin-left: 25px;
+  margin-block: 32px;
+}
+
+.fourth-section .coach-abdulkerim-description > div {
+  width: 50%;
+  margin-left: auto;
+}
+
+.fourth-section button {
+  border: none;
+  background: none;
+  color: #920b00;
+  text-decoration: underline 2px;
+  text-underline-position: under;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 32px;
+  transition: 0.2s;
+}
+
+.fourth-section button:hover {
+  transform: scale(1.05);
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 1300px) {
+  .fourth-section .image-wrapper {
+    width: 48%;
+  }
+  .fourth-section .coach-abdulkerim-description > div {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .fourth-section .image-wrapper {
+    width: 53%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .fourth-section .image-wrapper {
+    width: 58%;
+  }
+
+  .fourth-section .coach-abdulkerim-description > div {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .fourth-section .image-wrapper {
+    width: 67%;
+  }
+
+  .fourth-section .coach-abdulkerim-description > div {
+    width: 72%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .fourth-section .image-wrapper {
+    width: 82%;
+  }
+  .fourth-section .coach-abdulkerim-description > div {
+    width: 82%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .fourth-section .image-wrapper {
+    width: 88%;
+  }
+  .fourth-section .coach-abdulkerim-description > div {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .fourth-section .image-wrapper {
+    width: 89%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .vertical-divider {
+    display: none;
+  }
+
+  .fourth-section .khalid-grid,
+  .fourth-section .abdulkerim-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fourth-section .image-wrapper {
+    margin: auto;
+    height: 332px;
+    width: min(100vw, 310px);
+    margin-bottom: 22px;
+  }
+
+  .fourth-section .coach-khalid-description,
+  .fourth-section .coach-abdulkerim-description {
+    justify-self: center;
+    padding-inline: max(4vw, 20px);
+  }
+
+  .fourth-section .coach-abdulkerim-description {
+    order: 1;
+  }
+}
+/* sxn fifth section / gallery */
+
+.fifth-section {
+  background-color: #3d3b3b;
+  padding-block: 42px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.gallery-watermark {
+  position: absolute;
+  font-size: 352px;
+  transform: translate(-98px, 46px);
+  color: #ffffff06;
+}
+
+.gallery-images-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+}
+
+/* sxn sixth section / news*/
+
+.sixth-section {
+  background: #00000005;
+  padding-bottom: 1px;
+}
+
+.sixth-section h2 {
+  padding-top: 23px;
+  margin-top: 0px;
+}
+
+.sixth-section .news-cards-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.news-card {
+  /* border: 1px solid beige; */
+  width: 30%;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0px 1.5px 7px -1px #00000033;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card:hover,
+.news-card:active {
+  box-shadow: 0px 6.5px 25px -2px #00000045;
+}
+
+.news-card-image {
+  border: 1px solid #00000008 !important;
+}
+
+.news-card-header {
+  font-size: 18px;
+  margin: 5px 0;
+  margin-top: 14px;
+}
+
+.news-card-description {
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+.news-card-date {
+  font-size: 11px;
+  font-weight: 500;
+  color: #808080d6;
+  margin-bottom: 0px;
+  margin-top: auto;
+}
+
+.news-button {
+  background-color: #920b00;
+  color: white;
+  padding: 6px 13px;
+  margin: auto;
+  display: block;
+  margin-block: 39px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 19px;
+  border: none;
+}
+.news-button:hover {
+  opacity: 0.85;
+}
+
+.news-button:active {
+  box-shadow: 1px 2px 5px black;
+}
+
+/* sxn footer */
 footer {
   display: flex;
   justify-content: space-between;
@@ -127,28 +739,10 @@ footer {
   padding: 20px;
 }
 
-.home-main {
-  /* min-height: calc(100vh - 53px - 14px - 14px - 29px);
-  width: 90%;
-  max-width: 75%;
-  margin: 14px auto; */
-}
-
-.bunna-heading {
-  color: wheat;
-  font-size: 5.4vw;
-}
-
-.font-gradient {
-  display: inline-block;
-  background: -webkit-linear-gradient(
-    116deg,
-    var(--my-yellow-color),
-    var(--my-red-color)
-  );
-  /* background-clip: text; */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.section-heading {
+  margin: 23px 0;
+  font-size: 37px;
+  text-align: center;
 }
 
 .text-center {
@@ -184,153 +778,6 @@ footer {
 
 .full-vh {
   height: 100vh;
-}
-
-/*  sxn short about   */
-
-.second-view {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.second-view .text-wrapper {
-  width: 50%;
-  padding: 88px;
-  margin-top: -46px;
-}
-
-.second-view h2 {
-  font-size: 3.5vw;
-  font-family: helvetica;
-  margin-bottom: -2px;
-  font-variant: petite-caps;
-  font-weight: 600;
-  color: #920b00;
-}
-
-/* sxn stats */
-.stat-wrapper {
-  height: 65vh;
-}
-
-.stat-wrapper .next-image-wrapper {
-  position: absolute;
-  width: 100%;
-  /* aspect-ratio: 7/4; */
-  height: 65vh;
-}
-
-.stats-card {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #0080001c;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border-radius: 20px;
-  background: #ffffff12;
-  /* background: #0000005c; */
-  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.stats-card:hover,
-.stats-card:active {
-  box-shadow: 0px 0px 12px 0px #ffffff7d;
-  transform: scale(1.03);
-}
-.stats-card .icon-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.stats-card .stat-name {
-  font-size: 22px;
-  margin-block: 0;
-  margin-bottom: 10px;
-  color: white;
-}
-.stats-card .stat-number {
-  font-size: 52px;
-  font-weight: 900;
-  color: white;
-}
-
-.icon {
-  aspect-ratio: 1;
-}
-
-/* sxn news card sxn */
-
-.news-card {
-  /* border: 1px solid beige; */
-  width: 25%;
-  padding: 10px;
-  cursor: pointer;
-  box-shadow: 0px 1.5px 7px -1px #00000033;
-  transition: transform 0.3s, box-shadow 0.3s;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.news-card:hover,
-.news-card:active {
-  box-shadow: 0px 6.5px 25px -2px #00000045;
-}
-
-.news-card-image {
-  border: 1px solid #00000008 !important;
-}
-
-.news-card-header {
-  font-size: 18px;
-  margin: 5px 0;
-}
-
-.news-card-description {
-  margin-top: 0;
-}
-
-.news-card-date {
-  font-size: 11px;
-  font-weight: 500;
-  color: #808080d6;
-  margin-bottom: 0px;
-}
-
-.news-button {
-  background-color: #920b00;
-  color: white;
-  padding: 6px 13px;
-  margin: auto;
-  display: block;
-  margin-block: 39px;
-  font-size: 15px;
-  font-weight: 500;
-  border-radius: 16px;
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  cursor: pointer;
-
-  /* box-shadow: 0px 0px 7px 0px #ffffffba; */
-  transition: all 0.3s;
-  margin-bottom: 19px;
-}
-.news-button:hover {
-  opacity: 0.85;
-}
-
-.news-button:active {
-  box-shadow: 1px 2px 5px black;
 }
 
 @keyframes fadeInUp {

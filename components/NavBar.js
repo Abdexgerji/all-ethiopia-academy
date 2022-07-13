@@ -1,18 +1,20 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import MenuSVG from '../public/svg/my-svg/MenuSVG';
 
 const NavBar = () => {
   // router
   const router = useRouter();
   return (
-    <nav>
+    <header className='horizontal-padding-for-whole-site'>
       <Link href='/'>
         <a>
           <img src='/pictures/logo.jpg' alt='bunna logo' />
         </a>
       </Link>
 
-      <div className='nav-div'>
+      <MenuSVG className='menu-svg' />
+      <nav>
         <ul className='nav-ul'>
           <li>
             <Link href='/'>
@@ -49,8 +51,8 @@ const NavBar = () => {
             </Link>
           </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 
