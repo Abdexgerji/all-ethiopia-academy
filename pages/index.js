@@ -1,16 +1,12 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from '../styles/Home.module.css';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import CarouselComponent from '../components/Carousel';
-import NavBar from '../components/NavBar';
 import PlayerSVG from '../public/svg/my-svg/PlayerSVG';
 import CoachSVG from '../public/svg/my-svg/CoachSVG';
 import StadiumSVG from '../public/svg/my-svg/StadiumSVG';
 import StarsUnderlineSVG from '../public/svg/my-svg/StarsUnderlineSVG';
-import { primaryYellow } from '../components/css-variables';
 import ArrowDownSVG from '../public/svg/my-svg/ArrowDownSVG';
 
 const images = [
@@ -26,7 +22,7 @@ const images = [
 ];
 
 const galleryImages = [
-  '/pictures/img13.jpg',
+  '/pictures/img13-croped.jpg',
   '/pictures/img5.jpg',
   '/pictures/img12.jpg',
   '/pictures/img1.jpg',
@@ -265,7 +261,6 @@ export default function Home() {
                     src={image}
                     alt='Ethiopia Vs Egypt'
                     layout='fill'
-                    className='news-card-image'
                     objectFit='cover'
                   />
                 </div>
@@ -354,6 +349,22 @@ export default function Home() {
             </div>
           </div>
           <button className='news-button'>More News</button>
+        </section>
+
+        {/*  // sxn seventh section / contact */}
+        <section className='seventh-section horizontal-padding-for-whole-site'>
+          <div className='wrapper'>
+            <div className='image-wrapper'>
+              <Image
+                // loader={myLoader}
+                src='/pictures/grass-img.jpg'
+                alt='All Ethiopia Soccer Academy'
+                layout='fill'
+                objectFit='cover'
+              />
+            </div>
+            <button>CONTACT US</button>
+          </div>
         </section>
       </main>
     </>

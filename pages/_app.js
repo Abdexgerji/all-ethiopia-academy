@@ -1,13 +1,13 @@
 import Footer from '../components/Footer';
-import NavBar from '../components/NavBar';
+import Header from '../components/Header';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <NavBar />
+      <Header />
       <div style={{ minHeight: 'calc(100vh - 97px)' }}>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </div>
       <Footer />
     </>

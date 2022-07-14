@@ -1,6 +1,7 @@
-const MenuSVG = ({ style, width, height, fill, className }) => {
+const MenuSVG = ({ style, width, height, fill, className, onClick }) => {
   return (
     <svg
+      onClick={onClick}
       className={className}
       style={{ ...style }}
       width='49'
