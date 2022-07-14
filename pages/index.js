@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -36,32 +35,8 @@ export default function Home() {
   // router
   const router = useRouter();
 
-  // ! the functionality here helps get width of window
-  const [innerWidth, setInnerWidth] = useState(
-    typeof window !== 'undefined' && window?.innerWidth
-  ); // check width size of the window
-  const handleWindowSizeChange = () => {
-    setInnerWidth(window?.innerWidth);
-  };
-
-  // call your useEffect
-  useEffect(() => {
-    if (typeof window !== 'undefined' && window?.innerWidth) {
-      window?.addEventListener('resize', handleWindowSizeChange);
-      return () => {
-        window?.removeEventListener('resize', handleWindowSizeChange);
-      };
-    }
-  }, []);
-
   return (
     <>
-      <Head>
-        <title>Ethiopian Bunna</title>
-        <meta name='description' content='All Ethiopia Soccer Academy' />
-        <link rel='icon' href='/pictures/logo.ico' />
-      </Head>
-
       <main className='home-main'>
         {/* // sxn 1st section */}
         <section className='first-section '>

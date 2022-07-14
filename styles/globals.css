@@ -133,12 +133,17 @@ header li a:active {
   padding: 5px;
 }
 
-.nav-contact {
+.nav-contact a {
   background: var(--primary-color);
   color: white;
   padding: 3px 10px;
   border-radius: 3px;
   font-weight: 500;
+}
+
+.nav-contact a:hover {
+  color: white;
+  opacity: 0.8;
 }
 
 .menu-svg {
@@ -180,7 +185,8 @@ header li a:active {
   font-weight: 400;
 }
 
-.side-nav a:hover {
+.side-nav a:hover,
+.side-nav-close:hover {
   color: gray;
 }
 
@@ -193,6 +199,7 @@ header li a:active {
   font-weight: bold;
   font-size: 42px;
   padding: 8px;
+  transition: 0.3s;
 }
 
 .side-nav ul {

@@ -8,7 +8,6 @@ const NavBar = () => {
   // router
   const router = useRouter();
 
-  console.log({ router });
   return (
     <header className='horizontal-padding-for-whole-site'>
       <Link href='/'>

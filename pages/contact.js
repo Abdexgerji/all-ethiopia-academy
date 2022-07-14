@@ -1,5 +1,13 @@
 const contact = () => {
-  return <div>contact us</div>;
+  return (
+    <>
+      <main className='main-contact'>
+        <section></section>
+        <section></section>
+        <section></section>
+      </main>
+    </>
+  );
 };
 
 export default contact;
