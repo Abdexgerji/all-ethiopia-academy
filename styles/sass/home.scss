@@ -963,6 +963,13 @@ footer svg {
   margin-right: 15px;
 }
 
+footer li {
+  list-style: none;
+}
+
+footer .col-2-wrapper li {
+  font-weight: bold;
+}
 .col-2-wrapper ul {
   display: grid;
   grid-template-columns: 1fr;

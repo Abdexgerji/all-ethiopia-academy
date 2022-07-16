@@ -50,7 +50,7 @@ const Footer = () => {
               </Link>
               <Link href='/contact'>
                 <li className='nav-list'>
-                  <a>contact</a>
+                  <a>Contact</a>
                 </li>
               </Link>
             </ul>
