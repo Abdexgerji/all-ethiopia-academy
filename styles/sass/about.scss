@@ -1,0 +1,148 @@
+// $site-padding: max(280px, 20px);
+$site-padding: 30px;
+
+.main-about {
+  h2 {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  p,
+  li {
+    text-align: justify;
+    line-height: 1.6;
+    // max-width: 500px;
+  }
+
+  li {
+    list-style: disc;
+    margin-left: 24px;
+  }
+
+  // sxn 1st
+  .first-section {
+    position: relative;
+
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 8;
+
+      // to make dark overlay
+      &:before {
+        content: '';
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgb(0 0 0 / 39%);
+        z-index: 1;
+      }
+    }
+
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 50px;
+      color: white;
+      z-index: 2;
+      width: 100%;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 1000px) {
+      .image-wrapper {
+        aspect-ratio: 7;
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      .image-wrapper {
+        aspect-ratio: 6;
+      }
+
+      h1 {
+        font-size: 45px;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      .image-wrapper {
+        aspect-ratio: 4;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .image-wrapper {
+        aspect-ratio: 3;
+      }
+    }
+  }
+  // sxn 2nd
+  .second-section {
+    margin-top: 22px;
+    padding-inline: $site-padding;
+    max-width: 650px;
+    margin: auto;
+  }
+  // sxn 3rd
+  .third-section {
+    padding-inline: $site-padding;
+    max-width: 650px;
+    margin: auto;
+    margin-bottom: 20px;
+
+    .image-name-position-wrapper {
+      // background-color: #e8e4e4;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 47px;
+      position: relative;
+
+      .image-wrapper {
+        position: relative;
+        width: 100%;
+        height: 400px;
+      }
+
+      .name-position-wrapper {
+        align-self: end;
+
+        h6 {
+          font-size: 22px;
+        }
+      }
+
+      &.abdulkerim {
+        margin-top: 10px;
+      }
+    }
+
+    h4 {
+      font-size: 17px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .image-name-position-wrapper {
+        gap: 10px;
+      }
+    }
+
+    @media screen and (max-width: 605px) {
+      .image-name-position-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      img {
+        object-position: top !important;
+      }
+    }
+  }
+}

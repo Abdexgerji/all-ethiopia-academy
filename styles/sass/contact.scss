@@ -1,0 +1,330 @@
+.main-contact {
+  // sxn 1st
+  .first-section {
+    position: relative;
+
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 8;
+
+      // to make dark overlay
+      &:before {
+        content: '';
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgb(0 0 0 / 26%);
+        z-index: 1;
+      }
+    }
+
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 50px;
+      color: white;
+      z-index: 2;
+    }
+  }
+
+  // sxn 2nd
+  .second-section {
+    margin-block: 20px;
+    width: min(90%, 830px);
+    margin-inline: auto;
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      h3 {
+        font-size: 27px;
+        font-weight: 600;
+      }
+
+      //sxn 2nd left section
+      .send-message {
+        & > div {
+          display: grid;
+          gap: 15px;
+        }
+
+        .inputs-wrapper {
+          display: grid;
+          width: max(85%, 280px);
+          gap: 5px;
+
+          input {
+            padding: 6px;
+            border: none;
+            background-color: #d9d9d9;
+          }
+          textarea {
+            padding: 5px;
+            border: none;
+            background-color: #d9d9d9;
+            min-height: 100px;
+            width: 100% !important;
+          }
+
+          input:focus-visible,
+          textarea:focus-visible {
+            outline: solid #920b005e;
+          }
+        }
+
+        button {
+          place-self: start;
+          padding: 4px 40px;
+          border: none;
+          background-color: var(--primary-color);
+          color: white;
+          font-size: 19px;
+          border-radius: 2px;
+        }
+      }
+
+      //sxn 2nd right section
+      .address {
+        display: grid;
+        justify-content: end;
+
+        & > div {
+          display: grid;
+          align-content: start;
+          gap: 26px;
+        }
+
+        .info-wrapper {
+          display: grid;
+          gap: 12px;
+
+          .contact-info {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            align-items: center;
+            gap: 15px;
+
+            .sub-info {
+              display: flex;
+              align-items: center;
+              gap: 7px;
+              font-size: 12.2px;
+
+              &.phone {
+                margin-left: -3px;
+              }
+            }
+
+            .main-info {
+              font-weight: bold;
+
+              &.phone {
+                margin-left: 17px;
+              }
+              &.mail {
+                margin-left: 31px;
+              }
+            }
+          }
+
+          hr {
+            width: 86%;
+            margin-left: 25px;
+            margin-top: 12px;
+            margin-bottom: 5px;
+            border: 0.1px solid rgba(0, 0, 0, 0.0784313725);
+          }
+        }
+
+        .icons-wrapper {
+          display: flex;
+          gap: 22px;
+
+          path {
+            transition: 0.2s;
+          }
+
+          svg:hover {
+            cursor: pointer;
+          }
+
+          svg.yt:hover path {
+            stroke: red;
+            // fill: red;
+          }
+          svg.tg:hover path {
+            stroke: rgb(57 143 255);
+            fill: rgb(57 143 255);
+          }
+          svg.fb:hover path {
+            stroke: blue;
+            fill: blue;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 1100px) {
+      // for .second-section
+      width: min(90%, 790px);
+    }
+    @media screen and (max-width: 1000px) {
+      width: min(90%, 740px);
+    }
+    @media screen and (max-width: 900px) {
+      .wrapper .send-message .inputs-wrapper {
+        width: max(90%, 280px);
+      }
+    }
+    @media screen and (max-width: 780px) {
+      .wrapper .send-message .inputs-wrapper {
+        width: max(93%, 280px);
+      }
+
+      svg {
+        width: 21px;
+        height: 21px;
+      }
+
+      .wrapper .address .info-wrapper .contact-info .main-info {
+        font-size: 14px;
+      }
+      .wrapper .address .info-wrapper {
+        gap: 17px;
+      }
+    }
+
+    @media screen and (max-width: 710px) {
+      .wrapper .address .info-wrapper {
+        gap: 15px;
+      }
+    }
+
+    @media screen and (max-width: 668px) {
+      width: min(70%, 740px);
+      .wrapper {
+        grid-template-columns: 468px;
+        gap: 25px;
+        justify-content: center;
+
+        .address {
+          justify-content: unset;
+        }
+
+        .send-message .inputs-wrapper {
+          width: 100%;
+          input {
+            padding: 8px;
+          }
+        }
+
+        svg {
+          width: 28px;
+          height: 28px;
+        }
+        .address .info-wrapper .contact-info .main-info {
+          font-size: 16px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 534px) {
+      width: 82%;
+
+      .wrapper {
+        grid-template-columns: 100%;
+
+        .send-message .inputs-wrapper {
+          width: 100%;
+        }
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .wrapper {
+        svg {
+          width: 21px;
+          height: 21px;
+        }
+        .address .info-wrapper .contact-info .main-info {
+          font-size: 14px;
+        }
+
+        .main-info {
+          overflow-wrap: anywhere;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .first-section h1 {
+      font-size: 45px;
+    }
+    .first-section .image-wrapper {
+      aspect-ratio: 7;
+    }
+    .second-section .wrapper h3 {
+      font-size: 25px;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .first-section h1 {
+      font-size: 40px;
+    }
+    .first-section .image-wrapper {
+      aspect-ratio: 6.5;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .first-section h1 {
+      font-size: 35px;
+    }
+
+    .first-section .image-wrapper {
+      aspect-ratio: 6;
+    }
+
+    .second-section .wrapper h3 {
+      font-size: 23px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .first-section h1 {
+      font-size: 30px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .first-section .image-wrapper {
+      aspect-ratio: 5;
+    }
+
+    .second-section .wrapper h3 {
+      font-size: 22px;
+      font-weight: 700;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .first-section .image-wrapper {
+      aspect-ratio: 4;
+    }
+  }
+
+  @media screen and (max-width: 340px) {
+    .first-section .image-wrapper {
+      aspect-ratio: 4;
+    }
+  }
+}

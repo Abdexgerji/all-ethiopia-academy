@@ -1,7 +1,9 @@
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import '../styles/globals.css';
+import '../styles/home.css';
 import '../styles/contact.css';
+import '../styles/about.css';
+import '../styles/news.css';
 import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {

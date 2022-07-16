@@ -222,9 +222,10 @@ export default function Home() {
           {/* THE WATERMARK */}
           <p className='gallery-watermark'>GALLERY</p>
           <div className='gallery-images-wrapper'>
-            {galleryImages.map((image) => (
+            {galleryImages.map((image, index) => (
               <>
                 <div
+                  key={index}
                   className='image-wrapper'
                   style={{
                     position: 'relative',
@@ -234,7 +235,7 @@ export default function Home() {
                   <Image
                     // loader={myLoader}
                     src={image}
-                    alt='Ethiopia Vs Egypt'
+                    alt='All Ethiopia Soccer Academy'
                     layout='fill'
                     objectFit='cover'
                   />
@@ -285,7 +286,7 @@ export default function Home() {
                 <Image
                   // loader={myLoader}
                   src='/pictures/img7.jpg'
-                  alt='All Ethiopia Soccer Academy'
+                  alt='All Ethiopia Soccer Academy Interview'
                   layout='fill'
                   className='news-card-image'
                   objectFit='cover'
@@ -310,7 +311,7 @@ export default function Home() {
                 <Image
                   // loader={myLoader}
                   src='/pictures/img11.jpg'
-                  alt='All Ethiopia Soccer Academy'
+                  alt='All Ethiopia Soccer Academy Class Training'
                   layout='fill'
                   className='news-card-image'
                   objectFit='cover'
@@ -333,7 +334,7 @@ export default function Home() {
               <Image
                 // loader={myLoader}
                 src='/pictures/grass-img.jpg'
-                alt='All Ethiopia Soccer Academy'
+                alt='Grass Image'
                 layout='fill'
                 objectFit='cover'
               />
