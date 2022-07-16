@@ -77,10 +77,6 @@ a {
   height: 100vh;
 }
 
-li {
-  list-style: none;
-}
-
 /* // sxn header */
 header {
   display: flex;
@@ -201,6 +197,9 @@ header li a:active {
   display: grid;
   place-content: center;
   gap: 2px;
+}
+.side-nav ul li {
+  list-style: none;
 }
 
 .current-page-link {
@@ -789,7 +788,12 @@ header li a:active {
     width: 70%;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
+  .home-main .sixth-section .news-card {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 350px) {
   .home-main .sixth-section .news-card {
     width: 90%;
   }
