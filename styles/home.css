@@ -819,6 +819,14 @@ header li a:active {
   font-size: 25px;
   background: rgba(255, 255, 255, 0.54);
   font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.home-main .seventh-section button:focus {
+  box-shadow: 0 0 13px 1px #ffffff;
+}
+.home-main .seventh-section button:hover {
+  box-shadow: 0 0 13px 1px rgba(255, 255, 255, 0.6392156863);
 }
 @media screen and (max-width: 900px) {
   .home-main .seventh-section .image-wrapper {
