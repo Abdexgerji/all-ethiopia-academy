@@ -164,6 +164,7 @@ header li a:active {
   overflow-x: hidden;
   transition: 0.5s;
   box-shadow: 0px 1px 19px 0px rgba(0, 0, 0, 0.3803921569);
+  opacity: 0;
 }
 
 .side-nav a {
@@ -183,6 +184,7 @@ header li a:active {
 
 .open-side-nav {
   width: 250px !important;
+  opacity: 1;
 }
 
 .side-nav-close {
@@ -230,7 +232,7 @@ header li a:active {
   background-image: url("/pictures/hero-bg.jpg");
   background-size: cover;
   position: relative;
-  height: calc(100vh - 45px);
+  min-height: calc(100vh - 45px);
   z-index: -2;
 }
 .home-main .first-section-wrapper::before {
@@ -408,7 +410,7 @@ header li a:active {
   .home-main .second-section .image-wrapper {
     order: 1;
     height: 50vh;
-    width: 100vw;
+    width: 100%;
     margin-bottom: 30px;
   }
   .home-main .second-section .text-wrapper {

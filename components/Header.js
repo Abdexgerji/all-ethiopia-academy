@@ -1,10 +1,14 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { Context } from '../context';
 import MenuSVG from '../public/svg/my-svg/MenuSVG';
 
 const NavBar = () => {
   const [sideNavOpen, setSideNavOpen] = useState(false);
+
+  const { lang, setLang } = useContext(Context);
+
   // router
   const router = useRouter();
 
@@ -47,7 +51,7 @@ const NavBar = () => {
                     router.pathname === '/' ? 'current-page-link' : ''
                   }`}
                 >
-                  HOME
+                  {lang === 'eng' ? 'HOME' : 'ቤት'}
                 </a>
               </Link>
             </li>
@@ -62,7 +66,7 @@ const NavBar = () => {
                     router.pathname === '/news' ? 'current-page-link' : ''
                   }`}
                 >
-                  NEWS
+                  {lang === 'eng' ? 'NEWS' : 'ዜናዎች'}
                 </a>
               </Link>
             </li>
@@ -77,7 +81,7 @@ const NavBar = () => {
                     router.pathname === '/about' ? 'current-page-link' : ''
                   }`}
                 >
-                  ABOUT
+                  {lang === 'eng' ? 'ABOUT' : 'ስለ እኛ'}
                 </a>
               </Link>
             </li>
@@ -93,7 +97,7 @@ const NavBar = () => {
                     router.pathname === '/contact' ? 'current-page-link' : ''
                   }`}
                 >
-                  CONTACT US
+                  {lang === 'eng' ? 'CONTACT US' : 'አግኙን'}
                 </a>
               </Link>
             </li>
@@ -107,7 +111,7 @@ const NavBar = () => {
           <li>
             <Link href='/'>
               <a className={`${router.pathname === '/' ? 'current-page' : ''}`}>
-                HOME
+                {lang === 'eng' ? 'HOME' : 'ቤት'}
               </a>
             </Link>
           </li>
@@ -118,7 +122,7 @@ const NavBar = () => {
                   router.pathname === '/news' ? 'current-page' : ''
                 }`}
               >
-                NEWS
+                {lang === 'eng' ? 'NEWS' : 'ዜናዎች'}
               </a>
             </Link>
           </li>
@@ -129,7 +133,7 @@ const NavBar = () => {
                   router.pathname === '/about' ? 'current-page' : ''
                 }`}
               >
-                ABOUT
+                {lang === 'eng' ? 'ABOUT' : 'ስለ እኛ'}
               </a>
             </Link>
           </li>
@@ -141,7 +145,7 @@ const NavBar = () => {
                     router.pathname === '/contact' ? 'current-page' : ''
                   }`}
                 >
-                  CONTACT US
+                  {lang === 'eng' ? 'CONTACT US' : 'አግኙን'}
                 </a>
               </Link>
             </li>

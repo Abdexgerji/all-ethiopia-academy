@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useContext } from 'react';
+import { Context } from '../context';
 import FacebookSVG from '../public/svg/my-svg/FacebookSVG';
 import LocationSVG from '../public/svg/my-svg/LocationSVG';
 import MailSVG from '../public/svg/my-svg/MailSVG';
@@ -8,6 +10,8 @@ import TelephoneSVG from '../public/svg/my-svg/TelephoneSVG';
 import YoutubeSVG from '../public/svg/my-svg/YoutubeSVG';
 
 const Footer = () => {
+  const { lang, setLang } = useContext(Context);
+
   return (
     <>
       <footer>
@@ -23,7 +27,11 @@ const Footer = () => {
                 objectFit='cover'
               />
             </div>
-            <h5>All Ethiopia Soccer Academy</h5>
+            <h5>
+              {lang === 'eng'
+                ? 'All Ethiopia Soccer Academy'
+                : 'ኦል ኢትዮጵያ ሶከር አካዳሚ'}
+            </h5>
             <div className='svgs-wrapper'>
               <YoutubeSVG className='svg' />
               <TelegramSVG className='svg' />
@@ -34,23 +42,23 @@ const Footer = () => {
             <ul>
               <Link href='/'>
                 <li className='nav-list'>
-                  <a>Home</a>
+                  <a>{lang === 'eng' ? 'Home' : 'ቤት'}</a>
                 </li>
               </Link>
 
               <Link href='/about'>
                 <li className='nav-list'>
-                  <a>About</a>
+                  <a>{lang === 'eng' ? 'About' : 'ስለ እኛ'}</a>
                 </li>
               </Link>
               <Link href='/news'>
                 <li className='nav-list'>
-                  <a>News</a>
+                  <a>{lang === 'eng' ? 'News' : 'ዜናዎች'}</a>
                 </li>
               </Link>
               <Link href='/contact'>
                 <li className='nav-list'>
-                  <a>Contact</a>
+                  <a>{lang === 'eng' ? 'Contact' : 'አግኙን'}</a>
                 </li>
               </Link>
             </ul>
@@ -58,7 +66,10 @@ const Footer = () => {
           <div className='col-3-wrapper'>
             <ul>
               <li>
-                <LocationSVG /> Mesalemiya, Addis Ababa, Ethiopia
+                <LocationSVG />{' '}
+                {lang === 'eng'
+                  ? 'Mesalemiya, Addis Ababa, Ethiopia'
+                  : 'መሰሌሚያ, አዲስ አበባ, ኢትዮጵያ'}
               </li>
               <li>
                 <TelephoneSVG /> +251-911111111

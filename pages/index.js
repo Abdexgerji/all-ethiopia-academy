@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import PlayerSVG from '../public/svg/my-svg/PlayerSVG';
 import CoachSVG from '../public/svg/my-svg/CoachSVG';
 import StadiumSVG from '../public/svg/my-svg/StadiumSVG';
 import StarsUnderlineSVG from '../public/svg/my-svg/StarsUnderlineSVG';
 import ArrowDownSVG from '../public/svg/my-svg/ArrowDownSVG';
+import { Context } from '../context';
 
 const images = [
   {
@@ -32,6 +33,9 @@ const galleryImages = [
 ];
 
 export default function Home() {
+  const { lang, setLang } = useContext(Context);
+  setLang('amh');
+  console.log({ lang });
   // router
   const router = useRouter();
 
@@ -42,14 +46,28 @@ export default function Home() {
         <section className='first-section '>
           <div className='first-section-wrapper horizontal-padding-for-whole-site'>
             <div className='left-content'>
-              <h3>All Ethiopia Soccer Academy</h3>
-              <h1 className='full-headline'>
-                The home of future football{' '}
-                <span style={{ position: 'relative' }}>
-                  stars
-                  <StarsUnderlineSVG className='underline-svg' />
-                </span>
-              </h1>
+              <h3>
+                {lang === 'eng'
+                  ? 'All Ethiopia Soccer Academy'
+                  : 'ኦል ኢትዮጵያ ሶከር አካዳሚ'}
+              </h3>
+
+              {lang === 'eng' ? (
+                <>
+                  {' '}
+                  <h1 className='full-headline'>
+                    The home of future football{' '}
+                    <span style={{ position: 'relative' }}>
+                      stars
+                      <StarsUnderlineSVG className='underline-svg' />
+                    </span>
+                  </h1>
+                </>
+              ) : (
+                <>
+                  <h1 className='full-headline'>የወደፊቱ የእግር ኳስ ኮከቦች ምንጭ </h1>
+                </>
+              )}
               {/* down icon*/}
               <ArrowDownSVG className='arrow-down-svg' />
             </div>
@@ -67,10 +85,15 @@ export default function Home() {
             />
           </div>
           <div className='text-wrapper horizontal-padding-for-whole-site'>
-            <h2>Best Soccer Academy In Ethiopia</h2>
+            <h2>
+              {lang === 'eng'
+                ? 'Best Soccer Academy In Ethiopia'
+                : 'በኢትዮጵያ ምርጡ የእግር ኳስ አካዳሚ'}
+            </h2>
             <p>
-              We are different. We strive to make the best out of our trainees
-              and help them compete in the best leagues!
+              {lang === 'eng'
+                ? 'We are different. We strive to make the best out of our trainees and help them compete in the best leagues! '
+                : 'እኛ የተለያዩ ነን። ሰልጣኞቻችንን አንደኛ ለማድረግ እና በምርጥ ሊጎች እንዲወዳደሩ ለመርዳት እንተጋለን!'}
             </p>
           </div>
         </section>
@@ -96,7 +119,9 @@ export default function Home() {
                   />
                 </div>
                 {/* Name */}
-                <h3 className='stat-name'>Trainees</h3>
+                <h3 className='stat-name'>
+                  {lang === 'eng' ? 'Trainees' : 'ሰልጣኞች'}
+                </h3>
                 {/* Number */}
 
                 <span className='stat-number'> 100+</span>
@@ -113,7 +138,9 @@ export default function Home() {
                   />
                 </div>
                 {/* Name */}
-                <h3 className='stat-name'>Training Staff</h3>
+                <h3 className='stat-name'>
+                  {lang === 'eng' ? 'Training Staff' : 'አሰልጣኞች'}
+                </h3>
                 {/* Number */}
 
                 <span className='stat-number'> 5+</span>
@@ -129,12 +156,13 @@ export default function Home() {
                   />
                 </div>
                 {/* Name */}
-                <h3 className='stat-name'>Stadium</h3>
+                <h3 className='stat-name'>
+                  {lang === 'eng' ? 'Stadium' : 'ስታዲየም'}
+                </h3>
                 {/* Number */}
 
                 <span className='stat-number stadium-name'>
-                  {' '}
-                  Abebe Bikila Stadium
+                  {lang === 'eng' ? 'Abebe Bikila Stadium' : ' አበበ ቢቂላ ስታዲየም'}
                 </span>
               </div>
             </div>
@@ -144,7 +172,9 @@ export default function Home() {
         {/* // sxn 4th / the team*/}
 
         <section className='fourth-section'>
-          <h2 className='section-heading'>The Team</h2>
+          <h2 className='section-heading'>
+            {lang === 'eng' ? 'The Team' : 'መስራቾቹ'}
+          </h2>
           <div className='khalid-grid'>
             <div>
               <div className='image-wrapper margin-left-auto'>
@@ -168,30 +198,66 @@ export default function Home() {
             <div className='vertical-divider'></div>
             <div className='coach-khalid-description'>
               <div>
-                <h3>Coach Khalid Mohammed</h3>
-                <h5>Chief Executive Manager</h5>
+                <h3>
+                  {lang === 'eng' ? 'Coach Khalid Mohammed' : 'አሰልጣኝ ካሊድ መሀመድ'}
+                </h3>
+                <h5>
+                  {lang === 'eng' ? 'Chief Executive Manager' : 'ዋና ሥራ አስኪያጅ'}
+                </h5>
                 <ul>
-                  <li>Former Bunna Player</li>
-                  <li>Former Bunna Coach </li>
-                  <li>Youth team premier league head coach</li>
-                  <li>Ethiopian premier league champion</li>
+                  <li>
+                    {lang === 'eng' ? 'Former Bunna Player' : 'የቀድሞ የቡና ተጫዋች'}
+                  </li>
+                  <li>
+                    {lang === 'eng' ? 'Former Bunna Coach' : 'የቀድሞ የቡና አሰልጣኝ'}
+                  </li>
+                  <li>
+                    {lang === 'eng'
+                      ? ' Youth team premier league head coach'
+                      : 'የወጣት ቡድን ፕሪሚየር ሊግ ዋና አሰልጣኝ'}
+                  </li>
+                  <li>
+                    {lang === 'eng'
+                      ? 'Ethiopian premier league champion'
+                      : 'የኢትዮጵያ ፕሪምየር ሊግ ሻምፒዮን'}
+                  </li>
                 </ul>
-                <button>More</button>
+                <button>{lang === 'eng' ? 'More' : 'ተጨማሪ'}</button>
               </div>
             </div>
           </div>
           <div className='abdulkerim-grid'>
             <div className='coach-abdulkerim-description'>
               <div>
-                <h3>Coach Abdulkerim Hassen</h3>
-                <h5>Vice Executive Manager</h5>
+                <h3>
+                  {lang === 'eng'
+                    ? 'Coach Abdulkerim Hassen'
+                    : 'አሰልጣኝ አብዱልከሪም ሀሰን'}
+                </h3>
+                <h5>
+                  {lang === 'eng' ? 'Vice Executive Manager' : 'ምክትል ሥራ አስኪያጅ'}
+                </h5>
                 <ul>
-                  <li>Former Bunna Player</li>
-                  <li>Former Bunna Coach </li>
-                  <li>Youth team premier league head coach</li>
-                  <li>Ethiopian premier league champion</li>
+                  <li>
+                    {lang === 'eng'
+                      ? ' Former St. George Player'
+                      : 'የቀድሞ የቅዱስ ጊዮርጊስ ተጫዋች'}
+                  </li>
+                  <li>
+                    {lang === 'eng' ? 'Former Bunna Player' : 'የቀድሞ የቡና ተጫዋች'}
+                  </li>
+                  <li>
+                    {lang === 'eng'
+                      ? 'Key Player Ethiopian national team of under 17'
+                      : 'ቁልፍ የኢትዮጵያዊ ከ17 አመት በታች ብሄራዊ ቡድን ተጫዋች'}
+                  </li>
+                  <li>
+                    {lang === 'eng'
+                      ? 'Ethiopian premier league trophies'
+                      : 'የኢትዮጵያ ፕሪምየር ሊግ ዋንጫዎች'}
+                  </li>
                 </ul>
-                <button>More</button>
+                <button>{lang === 'eng' ? 'More' : 'ተጨማሪ'}</button>
               </div>
             </div>
             {/*vertical divider line  */}
@@ -220,7 +286,9 @@ export default function Home() {
         {/* // sxn gallery*/}
         <section className='fifth-section horizontal-padding-for-whole-site'>
           {/* THE WATERMARK */}
-          <p className='gallery-watermark'>GALLERY</p>
+          <p className='gallery-watermark'>
+            {lang === 'eng' ? 'GALLERY' : 'ፎቶዎች'}
+          </p>
           <div className='gallery-images-wrapper'>
             {galleryImages.map((image, index) => (
               <>
@@ -247,7 +315,9 @@ export default function Home() {
 
         {/* // sxn news*/}
         <section className='sixth-section'>
-          <h2 className='section-heading'>Latest News</h2>
+          <h2 className='section-heading'>
+            {lang === 'eng' ? 'Latest News' : 'አዳዲስ ዜናዎች'}
+          </h2>
 
           <div className='news-cards-wrapper horizontal-padding-for-whole-site'>
             <div className='news-card'>
@@ -268,11 +338,17 @@ export default function Home() {
                   objectFit='cover'
                 />
               </div>
-              <h5 className=' news-card-header'>Ethiopia vs Egypt</h5>
+              <h5 className=' news-card-header'>
+                {lang === 'eng' ? 'Ethiopia vs Egypt' : 'ኢትዮጵያ vs ግብፅ'}
+              </h5>
               <p className='news-card-description '>
-                Ethiopia defeated egypt for AFCON qualifiers
+                {lang === 'eng'
+                  ? 'Ethiopia defeated egypt for AFCON qualifiers'
+                  : 'ኢትዮጵያ በአፍሪካ ዋንጫ ማጣሪያ ግብፅን አሸንፋለች'}
               </p>
-              <p className='news-card-date'>June 22, 2021</p>
+              <p className='news-card-date'>
+                {lang === 'eng' ? 'June 22, 2021' : 'ጁን 22, 2021'}
+              </p>
             </div>
             <div className='news-card'>
               <div
@@ -293,11 +369,18 @@ export default function Home() {
                 />
               </div>
 
-              <h5 className=' news-card-header'>Our Interview</h5>
+              <h5 className=' news-card-header'>
+                {lang === 'eng' ? 'Our Interview' : 'የኛ ቃለ ምልልስ'}
+              </h5>
               <p className='news-card-description '>
-                We were interviewed by Kana TV
+                {lang === 'eng'
+                  ? 'We were interviewed by Kana TV'
+                  : 'በቃና ቃለ መጠይቅ ተደረገልን'}
+                TV
               </p>
-              <p className='news-card-date'>Mar 05, 2022</p>
+              <p className='news-card-date'>
+                {lang === 'eng' ? 'Mar 05, 2022' : 'ማርች 05, 2022'}
+              </p>
             </div>
             <div className='news-card'>
               <div
@@ -317,14 +400,24 @@ export default function Home() {
                   objectFit='cover'
                 />
               </div>
-              <h5 className=' news-card-header'>Class Based Trainings</h5>
+              <h5 className=' news-card-header'>
+                {lang === 'eng'
+                  ? 'Class Based Trainings'
+                  : 'ክፍል ውስጥ የተመሰረቱ ስልጠናዎች'}
+              </h5>
               <p className='news-card-description '>
-                We offer in-class trainings to our players
+                {lang === 'eng'
+                  ? 'We offer in-class trainings to our players'
+                  : 'ለተጫዋቾቻችን በክፍል ውስጥ ስልጠናዎችን እንሰጣለን'}
               </p>
-              <p className='news-card-date'>Feb 12, 2022</p>
+              <p className='news-card-date'>
+                {lang === 'eng' ? 'Feb 12, 2022' : 'ፌብሩዋሪ 12, 2022'}
+              </p>
             </div>
           </div>
-          <button className='news-button'>More News</button>
+          <button className='news-button'>
+            {lang === 'eng' ? 'More News' : 'ተጨማሪ ዜናዎች'}
+          </button>
         </section>
 
         {/*  // sxn seventh section / contact */}
@@ -339,7 +432,7 @@ export default function Home() {
                 objectFit='cover'
               />
             </div>
-            <button>CONTACT US</button>
+            <button>{lang === 'eng' ? 'CONTACT US' : 'አግኙን'}</button>
           </div>
         </section>
       </main>
