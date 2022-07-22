@@ -2,9 +2,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { Context } from '../context';
-import useHandleClickOutside from '../hooks/useHandleClickOutside';
+import useCloseWhenClickOutside from '../hooks/useCloseWhenClickOutside';
 import DownTriangleSVG from '../public/svg/my-svg/DownTriangleSVG';
 import MenuSVG from '../public/svg/my-svg/MenuSVG';
+import NextImage from './NextImage';
 
 const NavBar = () => {
   const [sideNavOpen, setSideNavOpen] = useState(false);
@@ -16,8 +17,12 @@ const NavBar = () => {
   const sideNavRef = useRef();
 
   // to close element when clicked outside the element
-  useHandleClickOutside(langDropdownRef, setLangDropdownOpen);
-  useHandleClickOutside(sideNavRef, setSideNavOpen);
+  useCloseWhenClickOutside(langDropdownRef, function () {
+    return setLangDropdownOpen(false);
+  });
+  useCloseWhenClickOutside(sideNavRef, function () {
+    setSideNavOpen(false);
+  });
 
   useEffect(() => {
     // add when mounted
@@ -45,7 +50,8 @@ const NavBar = () => {
     <header className='horizontal-padding-for-whole-site'>
       <Link href='/'>
         <a>
-          <img src='/pictures/logo.jpg' alt='bunna logo' />
+          <NextImage src='/pictures/logo.jpg' alt='bunna logo' />
+          {/* <img src='/pictures/logo.jpg' alt='bunna logo' /> */}
         </a>
       </Link>
 
@@ -83,7 +89,7 @@ const NavBar = () => {
                     router.pathname === '/' ? 'current-page-link' : ''
                   }`}
                 >
-                  {lang === 'eng' ? 'HOME' : 'ቤት'}
+                  {lang === 'eng' ? 'HOME' : 'ዋና ገጽ'}
                 </a>
               </Link>
             </li>
@@ -146,7 +152,7 @@ const NavBar = () => {
                 <a
                   className={`${router.pathname === '/' ? 'current-page' : ''}`}
                 >
-                  {lang === 'eng' ? 'HOME' : 'ቤት'}
+                  {lang === 'eng' ? 'HOME' : 'ዋና ገጽ'}
                 </a>
               </Link>
             </li>

@@ -54,7 +54,7 @@ export default function Home() {
               {lang === 'eng' ? (
                 <>
                   <h1 className='full-headline'>
-                    The home of future football
+                    The home of future football{' '}
                     <span style={{ position: 'relative' }}>
                       stars
                       <StarsUnderlineSVG className='underline-svg' />
@@ -222,7 +222,11 @@ export default function Home() {
                       : 'የኢትዮጵያ ፕሪምየር ሊግ ሻምፒዮን'}
                   </li>
                 </ul>
-                <button>{lang === 'eng' ? 'More' : 'ተጨማሪ'}</button>
+                <Link href='/about#khalid'>
+                  <a>
+                    <button>{lang === 'eng' ? 'More' : 'ተጨማሪ'}</button>
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -257,7 +261,12 @@ export default function Home() {
                       : 'የኢትዮጵያ ፕሪምየር ሊግ ዋንጫዎች'}
                   </li>
                 </ul>
-                <button>{lang === 'eng' ? 'More' : 'ተጨማሪ'}</button>
+
+                <Link href='/about#abdulkerim'>
+                  <a>
+                    <button>{lang === 'eng' ? 'More' : 'ተጨማሪ'}</button>
+                  </a>
+                </Link>
               </div>
             </div>
             {/*vertical divider line  */}
@@ -375,8 +384,7 @@ export default function Home() {
               <p className='news-card-description '>
                 {lang === 'eng'
                   ? 'We were interviewed by Kana TV'
-                  : 'በቃና ቃለ መጠይቅ ተደረገልን'}
-                TV
+                  : 'በቃና ቲቪ ቃለ መጠይቅ ተደረገልን'}
               </p>
               <p className='news-card-date'>
                 {lang === 'eng' ? 'Mar 05, 2022' : 'ማርች 05, 2022'}

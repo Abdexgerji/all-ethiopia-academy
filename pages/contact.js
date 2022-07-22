@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useContext } from 'react';
+import { Context } from '../context';
 import FacebookSVG from '../public/svg/my-svg/FacebookSVG';
 import LocationSVG from '../public/svg/my-svg/LocationSVG';
 import MailSVG from '../public/svg/my-svg/MailSVG';
@@ -7,7 +9,8 @@ import TelegramSVG from '../public/svg/my-svg/TelegramSVG';
 import TelephoneSVG from '../public/svg/my-svg/TelephoneSVG';
 import YoutubeSVG from '../public/svg/my-svg/YoutubeSVG';
 
-const contact = () => {
+const Contact = () => {
+  const { lang } = useContext(Context);
   return (
     <>
       <main className='main-contact'>
@@ -22,7 +25,7 @@ const contact = () => {
               objectFit='cover'
             />
           </div>
-          <h1>CONTACT US</h1>
+          <h1> {lang === 'eng' ? 'CONTACT US' : 'አግኙን'}</h1>
         </section>
 
         {/* // sxn 2 */}
@@ -30,45 +33,51 @@ const contact = () => {
           <div className='wrapper'>
             <div className='send-message'>
               <div>
-                <h3>Send Message</h3>
+                <h3> {lang === 'eng' ? 'Send Message' : 'መልዕክት ላክ'}</h3>
                 <div className='inputs-wrapper'>
-                  <label>Name</label>
+                  <label> {lang === 'eng' ? 'Name' : 'ስም'}</label>
                   <input type='text' />
-                  <label>Email</label>
+                  <label> {lang === 'eng' ? 'Email' : 'ኢሜይል'}</label>
                   <input type='text' />
-                  <label>Message</label>
+                  <label> {lang === 'eng' ? 'Message' : 'መልእክት'}</label>
                   <textarea></textarea>
                 </div>
-                <button>Send</button>
+                <button> {lang === 'eng' ? 'Send' : 'ላክ'}</button>
               </div>
             </div>
             <div className='address'>
               <div>
-                <h3>Address</h3>
+                <h3> {lang === 'eng' ? 'Address' : 'አድራሻ'}</h3>
                 <div className='info-wrapper'>
                   <div className='contact-info'>
                     <div className='sub-info'>
-                      <LocationSVG fill='black' /> <span>Location</span>{' '}
+                      <LocationSVG fill='black' />{' '}
+                      <span> {lang === 'eng' ? 'Location' : 'አካባቢ'}</span>{' '}
                     </div>
                     <span className='main-info'>
-                      Mesalemiya, Addis Ababa, Ethiopia
+                      {' '}
+                      {lang === 'eng'
+                        ? ' Mesalemiya, Addis Ababa, Ethiopia'
+                        : 'መሰሌሚያ፣ አዲስ አበባ፣ ኢትዮጵያ'}
                     </span>
                   </div>
                   <hr />
                   <div className='contact-info'>
                     <div className='sub-info phone'>
-                      <TelephoneSVG fill='black' /> <span>Phone</span>{' '}
+                      <TelephoneSVG fill='black' />{' '}
+                      <span> {lang === 'eng' ? 'Phone' : 'ስልክ'}</span>{' '}
                     </div>
 
                     <div className='main-info phone'>
-                      <div>+251-911111111</div>
-                      <div>+251-922222222</div>
+                      <div> +251-911111111</div>
+                      <div> +251-922222222</div>
                     </div>
                   </div>
                   <hr />
                   <div className='contact-info'>
                     <div className='sub-info'>
-                      <MailSVG fill='black' /> <span>Mail</span>{' '}
+                      <MailSVG fill='black' />{' '}
+                      <span> {lang === 'eng' ? 'Mail' : 'ኢሜይል'}</span>{' '}
                     </div>
                     <span className='main-info mail'>
                       allethiopiaacademy@gmail.com
@@ -96,7 +105,7 @@ const contact = () => {
             loading='lazy'
             referrerpolicy='no-referrer-when-downgrade'
           >
-            Loading map ...
+            {lang === 'eng' ? 'Loading map ...' : 'ካርታ በመጫን ላይ...'}
           </iframe>
         </section>
       </main>
@@ -104,4 +113,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;

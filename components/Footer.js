@@ -42,7 +42,7 @@ const Footer = () => {
             <ul>
               <Link href='/'>
                 <li className='nav-list'>
-                  <a>{lang === 'eng' ? 'Home' : 'ቤት'}</a>
+                  <a>{lang === 'eng' ? 'Home' : 'ዋና ገጽ'}</a>
                 </li>
               </Link>
 

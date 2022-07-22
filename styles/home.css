@@ -86,10 +86,11 @@ header {
 }
 
 /* logo */
-header img {
+header .image-wrapper {
   width: 150px;
-  height: auto;
-  padding-block: 5px;
+  aspect-ratio: 1282/307;
+  position: relative;
+  margin-block: 5px;
 }
 
 .nav-ul {
@@ -263,7 +264,7 @@ header li a:active {
 }
 
 .current-page-link {
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   text-shadow: 0px 0px 29px #000000;
 }
 
@@ -296,7 +297,7 @@ header li a:active {
   background-size: cover;
   position: relative;
   min-height: calc(100vh - 45px);
-  z-index: -2;
+  z-index: 0;
 }
 .home-main .first-section-wrapper::before {
   content: "";
@@ -906,9 +907,9 @@ header li a:active {
   top: 50%;
   transform: translate(-50%, -50%);
   border: none;
-  padding: 12px;
+  padding: 12px 17px;
   font-size: 25px;
-  background: rgba(255, 255, 255, 0.54);
+  background: white;
   font-weight: bold;
   cursor: pointer;
   transition: 0.2s;
@@ -924,7 +925,7 @@ header li a:active {
     aspect-ratio: 21/5;
   }
   .home-main .seventh-section button {
-    padding: 7px;
+    padding: 7px 11px;
     font-size: 21px;
   }
 }
@@ -956,7 +957,7 @@ header li a:active {
 @media screen and (max-width: 420px) {
   .home-main .seventh-section button {
     font-size: 14px;
-    padding: 6px;
+    padding: 6px 9px;
   }
 }
 

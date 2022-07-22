@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const useHandleClickOutside = (element, setFunc) => {
+const useCloseWhenClickOutside = (element, closeFunc) => {
   useEffect(() => {
     // add when mounted
     document.addEventListener('mousedown', handleClick);
@@ -17,8 +17,9 @@ const useHandleClickOutside = (element, setFunc) => {
     }
     // outside click
     // ... do whatever on click outside here ...
-    setFunc(false);
+    // to close the element(make it disapper)
+    closeFunc();
   };
 };
 
-export default useHandleClickOutside;
+export default useCloseWhenClickOutside;
