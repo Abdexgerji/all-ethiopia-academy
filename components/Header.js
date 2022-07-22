@@ -1,13 +1,42 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { Context } from '../context';
+import useHandleClickOutside from '../hooks/useHandleClickOutside';
+import DownTriangleSVG from '../public/svg/my-svg/DownTriangleSVG';
 import MenuSVG from '../public/svg/my-svg/MenuSVG';
 
 const NavBar = () => {
   const [sideNavOpen, setSideNavOpen] = useState(false);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
 
   const { lang, setLang } = useContext(Context);
+
+  const langDropdownRef = useRef();
+  const sideNavRef = useRef();
+
+  // to close element when clicked outside the element
+  useHandleClickOutside(langDropdownRef, setLangDropdownOpen);
+  useHandleClickOutside(sideNavRef, setSideNavOpen);
+
+  useEffect(() => {
+    // add when mounted
+    document.addEventListener('mousedown', handleClick);
+    // return function to be called when unmounted
+    return () => {
+      document.removeEventListener('mousedown', handleClick);
+    };
+  }, []);
+
+  const handleClick = (e) => {
+    if (langDropdownRef.current.contains(e.target)) {
+      // inside click
+      return;
+    }
+    // outside click
+    // ... do whatever on click outside here ...
+    setLangDropdownOpen(false);
+  };
 
   // router
   const router = useRouter();
@@ -29,7 +58,10 @@ const NavBar = () => {
       />
 
       {/* // sxn side-nav */}
-      <div className={`side-nav ${sideNavOpen && 'open-side-nav'}`}>
+      <div
+        ref={sideNavRef}
+        className={`side-nav ${sideNavOpen && 'open-side-nav'}`}
+      >
         <span
           className='side-nav-close'
           onClick={() => {
@@ -106,52 +138,94 @@ const NavBar = () => {
       </div>
 
       {/* // sxn main-nav */}
-      <nav className='main-nav'>
-        <ul className='nav-ul'>
-          <li>
-            <Link href='/'>
-              <a className={`${router.pathname === '/' ? 'current-page' : ''}`}>
-                {lang === 'eng' ? 'HOME' : 'ቤት'}
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/news'>
-              <a
-                className={`${
-                  router.pathname === '/news' ? 'current-page' : ''
-                }`}
-              >
-                {lang === 'eng' ? 'NEWS' : 'ዜናዎች'}
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/about'>
-              <a
-                className={`${
-                  router.pathname === '/about' ? 'current-page' : ''
-                }`}
-              >
-                {lang === 'eng' ? 'ABOUT' : 'ስለ እኛ'}
-              </a>
-            </Link>
-          </li>
-          {router.pathname !== '/contact' && (
-            <li className='nav-contact'>
-              <Link href='/contact'>
+      <div className='nav-lang-wrapper'>
+        <nav className='main-nav'>
+          <ul className='nav-ul'>
+            <li>
+              <Link href='/'>
                 <a
-                  className={`${
-                    router.pathname === '/contact' ? 'current-page' : ''
-                  }`}
+                  className={`${router.pathname === '/' ? 'current-page' : ''}`}
                 >
-                  {lang === 'eng' ? 'CONTACT US' : 'አግኙን'}
+                  {lang === 'eng' ? 'HOME' : 'ቤት'}
                 </a>
               </Link>
             </li>
-          )}
-        </ul>
-      </nav>
+            <li>
+              <Link href='/news'>
+                <a
+                  className={`${
+                    router.pathname === '/news' ? 'current-page' : ''
+                  }`}
+                >
+                  {lang === 'eng' ? 'NEWS' : 'ዜናዎች'}
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/about'>
+                <a
+                  className={`${
+                    router.pathname === '/about' ? 'current-page' : ''
+                  }`}
+                >
+                  {lang === 'eng' ? 'ABOUT' : 'ስለ እኛ'}
+                </a>
+              </Link>
+            </li>
+            {router.pathname !== '/contact' && (
+              <li className='nav-contact'>
+                <Link href='/contact'>
+                  <a
+                    className={`${
+                      router.pathname === '/contact' ? 'current-page' : ''
+                    }`}
+                  >
+                    {lang === 'eng' ? 'CONTACT US' : 'አግኙን'}
+                  </a>
+                </Link>
+              </li>
+            )}
+          </ul>
+        </nav>
+        <div className='lang-btn-wrapper'>
+          <button
+            className='lang-btn'
+            onClick={() => {
+              setLangDropdownOpen((prev) => !prev);
+            }}
+          >
+            <spa>{lang === 'eng' ? 'En' : 'አማ'}</spa>
+            <DownTriangleSVG />
+          </button>
+
+          {/* // sxn lang dropdown  */}
+          <div
+            ref={langDropdownRef}
+            className={`lang-dropdown ${
+              langDropdownOpen ? 'open-lang-dropdown' : ''
+            }`}
+          >
+            <div
+              className={`${lang === 'eng' ? 'selected-lang' : ''}`}
+              onClick={() => {
+                setLang('eng');
+                setLangDropdownOpen(false);
+              }}
+            >
+              English
+            </div>
+            <div
+              className={`${lang === 'amh' ? 'selected-lang' : ''}`}
+              onClick={() => {
+                setLang('amh');
+                setLangDropdownOpen(false);
+              }}
+            >
+              አማርኛ
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
   );
 };

@@ -136,6 +136,64 @@ header li a:active {
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5019607843);
 }
 
+.nav-lang-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.lang-btn-wrapper {
+  margin-left: 15px;
+  position: relative;
+}
+
+.lang-btn {
+  border: 1px solid #cacaca;
+  padding: 4px 5px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.lang-btn:hover {
+  background-color: #f9f7f7;
+}
+.lang-btn:focus {
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.11);
+}
+.lang-btn svg {
+  width: 8px;
+  height: 8px;
+  transform: translateY(1px);
+  margin-left: 3px;
+}
+
+.lang-dropdown {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.6705882353);
+  top: 31px;
+  left: -44px;
+  display: none;
+  z-index: 5;
+}
+.lang-dropdown .selected-lang {
+  background-color: rgba(128, 128, 128, 0.168627451);
+}
+.lang-dropdown div {
+  padding: 7px 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.lang-dropdown div:hover {
+  background-color: #716f6f;
+  color: white;
+}
+
+.open-lang-dropdown {
+  display: block !important;
+}
+
 .menu-svg {
   display: none;
   width: 30px;
@@ -209,12 +267,17 @@ header li a:active {
   text-shadow: 0px 0px 29px #000000;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .main-nav {
     display: none;
   }
   .menu-svg {
     display: block;
+    order: 1;
+  }
+  .nav-lang-wrapper {
+    margin-left: auto;
+    margin-right: 13px;
   }
 }
 /* css after the figma design */
@@ -265,6 +328,9 @@ header li a:active {
   letter-spacing: 2px;
   text-transform: capitalize;
 }
+.home-main .first-section h1.amharic {
+  font-size: 80px;
+}
 .home-main .first-section .star-svg-wrapper {
   position: relative;
 }
@@ -287,11 +353,19 @@ header li a:active {
   margin-top: 60px;
   transform: translateY(-32px);
 }
+@media screen and (max-width: 1125px) {
+  .home-main .first-section h1.amharic {
+    font-size: 68px;
+  }
+}
 @media screen and (max-width: 980px) {
   .home-main .first-section h1 {
     font-size: 60px;
     width: 60%;
     letter-spacing: 2px;
+  }
+  .home-main .first-section h1.amharic {
+    font-size: 57px;
   }
 }
 @media screen and (max-width: 830px) {
@@ -319,6 +393,9 @@ header li a:active {
     width: 85%;
     margin: auto;
   }
+  .home-main .first-section h1.amharic {
+    font-size: 50px;
+  }
   .home-main .first-section .underline-svg {
     bottom: -4px;
     left: -7px;
@@ -330,11 +407,17 @@ header li a:active {
     font-size: 48px;
     width: 100%;
   }
+  .home-main .first-section h1.amharic {
+    font-size: 48px;
+  }
 }
 @media screen and (max-width: 463px) {
   .home-main .first-section h1 {
     font-size: 35px;
     line-height: 1.9;
+  }
+  .home-main .first-section h1.amharic {
+    font-size: 35px;
   }
   .home-main .first-section h3 {
     font-size: 13px;
@@ -350,6 +433,9 @@ header li a:active {
     font-size: 29px;
     line-height: 1.9;
   }
+  .home-main .first-section h1.amharic {
+    font-size: 29px;
+  }
   .home-main .first-section h3 {
     font-size: 12px;
   }
@@ -364,6 +450,9 @@ header li a:active {
 }
 @media screen and (max-width: 273px) {
   .home-main .first-section h1 {
+    font-size: 25px;
+  }
+  .home-main .first-section h1.amharic {
     font-size: 25px;
   }
 }
@@ -564,7 +653,7 @@ header li a:active {
   font-size: max(1.7vw, 18px);
 }
 .home-main .fourth-section h5 {
-  color: rgba(158, 158, 158, 0.6784313725);
+  color: rgb(158, 158, 158);
   font-weight: 500;
   font-size: 17px;
   margin-bottom: 2px;
@@ -915,6 +1004,11 @@ footer li {
 
 footer .col-2-wrapper li {
   font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+footer .col-2-wrapper li:hover {
+  color: lightgrey;
 }
 
 .col-2-wrapper ul {

@@ -34,8 +34,7 @@ const galleryImages = [
 
 export default function Home() {
   const { lang, setLang } = useContext(Context);
-  setLang('amh');
-  console.log({ lang });
+
   // router
   const router = useRouter();
 
@@ -54,9 +53,8 @@ export default function Home() {
 
               {lang === 'eng' ? (
                 <>
-                  {' '}
                   <h1 className='full-headline'>
-                    The home of future football{' '}
+                    The home of future football
                     <span style={{ position: 'relative' }}>
                       stars
                       <StarsUnderlineSVG className='underline-svg' />
@@ -65,7 +63,9 @@ export default function Home() {
                 </>
               ) : (
                 <>
-                  <h1 className='full-headline'>የወደፊቱ የእግር ኳስ ኮከቦች ምንጭ </h1>
+                  <h1 className='full-headline amharic'>
+                    የወደፊቱ የእግር ኳስ ኮከቦች ምንጭ{' '}
+                  </h1>
                 </>
               )}
               {/* down icon*/}

@@ -141,6 +141,69 @@ header li a:active {
   box-shadow: 0px 3px 5px #00000080;
 }
 
+.nav-lang-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.lang-btn-wrapper {
+  margin-left: 15px;
+  position: relative;
+}
+
+.lang-btn {
+  border: 1px solid #cacaca;
+  padding: 4px 5px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: #f9f7f7;
+  }
+  &:focus {
+    box-shadow: 0 2px 9px rgb(0 0 0 / 11%);
+  }
+
+  svg {
+    width: 8px;
+    height: 8px;
+    transform: translateY(1px);
+    margin-left: 3px;
+  }
+}
+
+.lang-dropdown {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 0 10px 0px #000000ab;
+  top: 31px;
+  left: -44px;
+  display: none;
+  z-index: 5;
+
+  .selected-lang {
+    background-color: #8080802b;
+  }
+
+  & div {
+    padding: 7px 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #716f6f;
+      color: white;
+    }
+  }
+}
+
+.open-lang-dropdown {
+  display: block !important;
+}
+
 .menu-svg {
   display: none;
   width: 30px;
@@ -215,12 +278,18 @@ header li a:active {
   text-shadow: 0px 0px 29px #000000;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .main-nav {
     display: none;
   }
   .menu-svg {
     display: block;
+    order: 1;
+  }
+
+  .nav-lang-wrapper {
+    margin-left: auto;
+    margin-right: 13px;
   }
 }
 
@@ -270,6 +339,10 @@ header li a:active {
     margin: 0;
     letter-spacing: 2px;
     text-transform: capitalize;
+
+    &.amharic {
+      font-size: 80px;
+    }
   }
 
   .first-section .star-svg-wrapper {
@@ -298,9 +371,18 @@ header li a:active {
     transform: translateY(-32px);
   }
 
+  @media screen and (max-width: 1125px) {
+    .first-section h1.amharic {
+      font-size: 68px;
+    }
+  }
+
   @media screen and (max-width: 980px) {
     .first-section h1 {
       font-size: 60px;
+      &.amharic {
+        font-size: 57px;
+      }
       width: 60%;
       letter-spacing: 2px;
     }
@@ -327,6 +409,9 @@ header li a:active {
     }
     .first-section h1 {
       font-size: 50px;
+      &.amharic {
+        font-size: 50px;
+      }
       width: 85%;
       margin: auto;
     }
@@ -339,12 +424,19 @@ header li a:active {
   @media screen and (max-width: 575px) {
     .first-section h1 {
       font-size: 48px;
+      &.amharic {
+        font-size: 48px;
+      }
       width: 100%;
     }
   }
   @media screen and (max-width: 463px) {
     .first-section h1 {
       font-size: 35px;
+
+      &.amharic {
+        font-size: 35px;
+      }
       line-height: 1.9;
     }
     .first-section h3 {
@@ -359,6 +451,10 @@ header li a:active {
   @media screen and (max-width: 373px) {
     .first-section h1 {
       font-size: 29px;
+
+      &.amharic {
+        font-size: 29px;
+      }
       line-height: 1.9;
     }
     .first-section h3 {
@@ -376,6 +472,9 @@ header li a:active {
   @media screen and (max-width: 273px) {
     .first-section h1 {
       font-size: 25px;
+      &.amharic {
+        font-size: 25px;
+      }
     }
   }
   /* // sxn second section */
@@ -602,7 +701,7 @@ header li a:active {
   }
 
   .fourth-section h5 {
-    color: rgba(158, 158, 158, 0.6784313725);
+    color: rgba(158, 158, 158);
     font-weight: 500;
     font-size: 17px;
     margin-bottom: 2px;
@@ -980,6 +1079,12 @@ footer li {
 
 footer .col-2-wrapper li {
   font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    color: lightgrey;
+  }
 }
 .col-2-wrapper ul {
   display: grid;
