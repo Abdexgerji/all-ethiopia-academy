@@ -1096,8 +1096,7 @@ footer .footer-wrapper {
 footer .image-wrapper {
   position: relative;
   aspect-ratio: 5/5;
-  width: 45px;
-  margin: auto;
+  height: 100%;
 }
 
 footer .col-1-wrapper {
@@ -1109,6 +1108,27 @@ footer .col-1-wrapper {
 
 footer .svgs-wrapper {
   margin-top: 2px;
+
+  path {
+    transition: 0.2s;
+  }
+
+  svg:hover {
+    cursor: pointer;
+  }
+
+  svg.yt:hover path {
+    stroke: red;
+    // fill: red;
+  }
+  svg.tg:hover path {
+    stroke: rgb(57 143 255);
+    fill: rgb(57 143 255);
+  }
+  svg.fb:hover path {
+    stroke: blue;
+    fill: blue;
+  }
 }
 
 footer svg {
@@ -1127,7 +1147,7 @@ footer .col-2-wrapper li {
   transition: 0.2s;
 
   &:hover {
-    color: lightgrey;
+    color: rgb(163, 163, 163);
   }
 }
 .col-2-wrapper ul {
@@ -1153,6 +1173,18 @@ footer .col-2-wrapper li {
 
 .col-3-wrapper svg {
   margin-top: 3px;
+}
+
+.col-3-wrapper span {
+  font-weight: 100;
+}
+
+.col-3-wrapper li div {
+  max-width: 282px;
+
+  & div:first-child {
+    margin-bottom: 4px;
+  }
 }
 
 footer .copyright-wrapper {

@@ -83,7 +83,6 @@ export default function Home() {
         {/* // sxn 2nd / short about */}
         <section className='second-section full-vh'>
           <NextImage
-            // loader={myLoader}
             src='/pictures/training-image.jpg'
             alt='Training Image'
             layout='fill'
@@ -188,7 +187,6 @@ export default function Home() {
           <div className='khalid-grid'>
             <div>
               <NextImage
-                // loader={myLoader}
                 src='/pictures/coach-khalid-cropped.jpg'
                 alt='Coach Khalid'
                 layout='fill'
@@ -283,7 +281,6 @@ export default function Home() {
             <div className='vertical-divider'></div>
             <div>
               <NextImage
-                // loader={myLoader}
                 src='/pictures/coach-abdulkerim.jpg'
                 alt='Coach Abdulkerim'
                 layout='fill'
@@ -493,7 +490,7 @@ className='coach-card'
   }}
 >
   <Image
-    // loader={myLoader}
+   
     src='/pictures/coach-khalid.jpg'
     alt='Coach Khalid'
     layout='fill'
@@ -531,7 +528,7 @@ className='coach-card'
   }}
 >
   <Image
-    // loader={myLoader}
+   
     src='/pictures/coach-abdulkerim.jpg'
     alt='Coach Khalid'
     layout='fill'

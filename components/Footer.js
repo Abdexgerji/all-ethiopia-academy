@@ -19,7 +19,6 @@ const Footer = () => {
           <div className='col-1-wrapper'>
             <div className='image-wrapper'>
               <Image
-                // loader={myLoader}
                 src='/pictures/logo-copy.jpg'
                 alt='Ethiopia Vs Egypt'
                 layout='fill'
@@ -33,9 +32,17 @@ const Footer = () => {
                 : 'ኦል ኢትዮጵያ ሶከር አካዳሚ'}
             </h5>
             <div className='svgs-wrapper'>
-              <YoutubeSVG className='svg' />
-              <TelegramSVG className='svg' />
-              <FacebookSVG className='svg' />
+              <a target='_blank' href='https://youtube.com' rel='noreferrer'>
+                <YoutubeSVG className='svg yt' />
+              </a>
+
+              <a target='_blank' href='https://t.me' rel='noreferrer'>
+                <TelegramSVG className='svg tg' />
+              </a>
+
+              <a target='_blank' href='https://fb.com' rel='noreferrer'>
+                <FacebookSVG className='svg fb' />
+              </a>
             </div>
           </div>
           <div className='col-2-wrapper'>
@@ -67,15 +74,54 @@ const Footer = () => {
             <ul>
               <li>
                 <LocationSVG />{' '}
-                {lang === 'eng'
-                  ? 'Mesalemiya, Addis Ababa, Ethiopia'
-                  : 'መሰሌሚያ, አዲስ አበባ, ኢትዮጵያ'}
+                <div>
+                  <div>
+                    {lang === 'eng' ? (
+                      <>
+                        {' '}
+                        <strong>Stadium - </strong>
+                        <span>
+                          Abebe Bikila Stadium, Mesalemiya, Addis Ababa,
+                          Ethiopia
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        {' '}
+                        <strong>ስታዲየም - </strong>
+                        <span>አበበ ቢቂላ ስታዲየም, መሰሌሚያ, አዲስ አበባ, ኢትዮጵያ</span>
+                      </>
+                    )}
+                  </div>
+                  <div>
+                    {lang === 'eng' ? (
+                      <>
+                        {' '}
+                        <strong>Office - </strong>
+                        <span>
+                          Beto Building, Near Teklehaimanot Hospital, Addis
+                          Ababa, Ethiopia
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        {' '}
+                        <strong>ቢሮ - </strong>
+                        <span>ቤቶ ሕንፃ፣ ተክለሃይማኖት ሆስፒታል አጠገብ፣ አዲስ አበባ፣ ኢትዮጵያ</span>
+                      </>
+                    )}{' '}
+                  </div>
+                </div>
               </li>
               <li>
-                <TelephoneSVG /> +251-911111111
+                <TelephoneSVG />{' '}
+                <div>
+                  <div>+251-986887023</div>
+                  <div>+251-911540238</div>
+                </div>
               </li>
               <li>
-                <MailSVG /> allethiopiaacademy@gmail.com
+                <MailSVG /> allethiopiascor269@gmail.com
               </li>
             </ul>
           </div>
@@ -83,7 +129,7 @@ const Footer = () => {
 
         {/* // sxn copyright */}
         <div className='copyright-wrapper'>
-          &copy; All Ethiopia Soccer Academy
+          &copy; All Ethiopia Soccer Academy, 2022
         </div>
       </footer>
     </>

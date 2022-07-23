@@ -87,9 +87,23 @@ const Contact = () => {
                   <hr />
                 </div>
                 <div className='icons-wrapper'>
-                  <YoutubeSVG className='yt' fill='black' />
-                  <TelegramSVG className='tg' fill='black' />
-                  <FacebookSVG className='fb' fill='black' />
+                  <a
+                    target='_blank'
+                    href='https://youtube.com'
+                    rel='noreferrer'
+                  >
+                    <YoutubeSVG className='yt' fill='black' />
+                  </a>
+
+                  <a target='_blank' href='https://t.me' rel='noreferrer'>
+                    {' '}
+                    <TelegramSVG className='tg' fill='black' />
+                  </a>
+
+                  <a target='_blank' href='https://fb.com' rel='noreferrer'>
+                    {' '}
+                    <FacebookSVG className='fb' fill='black' />
+                  </a>
                 </div>
               </div>
             </div>
