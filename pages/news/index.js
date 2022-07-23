@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useContext } from 'react';
+import NextImage from '../../components/NextImage';
 import { Context } from '../../context';
 
 const News = () => {
@@ -11,16 +12,16 @@ const News = () => {
       <main className='main-news'>
         {/* // sxn first section */}
         <section className='first-section'>
-          <div className='image-wrapper'>
-            <Image
-              // loader={myLoader}
-              src='/pictures/grass-img2.jpg'
-              alt='All Ethiopia Soccer Academy Grass'
-              layout='fill'
-              objectFit='cover'
-              objectPosition='0 57.5%'
-            />
-          </div>
+          <NextImage
+            src='/pictures/grass-img2.jpg'
+            alt='All Ethiopia Soccer Academy Grass'
+            layout='fill'
+            objectFit='cover'
+            objectPosition='0 57.5%'
+            placeholder='blur'
+            blurDataURL='/pictures/placeholder.jpg'
+          />
+
           <div className='text-wrapper'>
             <h1> {lang === 'eng' ? 'NEWS' : 'ዜናዎች'}</h1>
             <h5>
@@ -36,15 +37,15 @@ const News = () => {
             <h2>{lang === 'eng' ? 'Latest News' : 'አዳዲስ ዜናዎች'} </h2>
             <div className='news-cards-wrapper'>
               <div className='news-card'>
-                <div className='image-wrapper'>
-                  <Image
-                    // loader={myLoader}
-                    src='/pictures/ethiopia-vs-egypt.jpg'
-                    alt='Ethiopia vs Egypt'
-                    layout='fill'
-                    objectFit='cover'
-                  />
-                </div>
+                <NextImage
+                  src='/pictures/ethiopia-vs-egypt.jpg'
+                  alt='Ethiopia vs Egypt'
+                  layout='fill'
+                  objectFit='cover'
+                  placeholder='blur'
+                  blurDataURL='/pictures/placeholder.jpg'
+                />
+
                 <div className='content-wrapper'>
                   <h5>
                     {lang === 'eng' ? 'Egypt vs Ethiopia' : 'ኢትዮጵያ vs ግብፅ'}
@@ -60,15 +61,15 @@ const News = () => {
                 </p>
               </div>
               <div className='news-card'>
-                <div className='image-wrapper'>
-                  <Image
-                    // loader={myLoader}
-                    src='/pictures/img7.jpg'
-                    alt='Kana Interview'
-                    layout='fill'
-                    objectFit='cover'
-                  />
-                </div>
+                <NextImage
+                  src='/pictures/img7.jpg'
+                  alt='Kana Interview'
+                  layout='fill'
+                  objectFit='cover'
+                  placeholder='blur'
+                  blurDataURL='/pictures/placeholder.jpg'
+                />
+
                 <div className='content-wrapper'>
                   <h5>{lang === 'eng' ? 'Our Interview' : 'የኛ ቃለ ምልልስ'}</h5>
                   <p>
@@ -82,15 +83,15 @@ const News = () => {
                 </p>
               </div>
               <div className='news-card'>
-                <div className='image-wrapper'>
-                  <Image
-                    // loader={myLoader}
-                    src='/pictures/img11.jpg'
-                    alt='Class Based Training'
-                    layout='fill'
-                    objectFit='cover'
-                  />
-                </div>
+                <NextImage
+                  src='/pictures/img11.jpg'
+                  alt='Class Based Training'
+                  layout='fill'
+                  objectFit='cover'
+                  placeholder='blur'
+                  blurDataURL='/pictures/placeholder.jpg'
+                />
+
                 <div className='content-wrapper'>
                   <h5>
                     {lang === 'eng'

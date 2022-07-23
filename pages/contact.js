@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useContext } from 'react';
+import NextImage from '../components/NextImage';
 import { Context } from '../context';
 import FacebookSVG from '../public/svg/my-svg/FacebookSVG';
 import LocationSVG from '../public/svg/my-svg/LocationSVG';
@@ -16,15 +17,15 @@ const Contact = () => {
       <main className='main-contact'>
         {/* // sxn 1 */}
         <section className='first-section'>
-          <div className='image-wrapper'>
-            <Image
-              // loader={myLoader}
-              src='/pictures/img5.jpg'
-              alt='All Ethiopia Soccer Academy'
-              layout='fill'
-              objectFit='cover'
-            />
-          </div>
+          <NextImage
+            src='/pictures/img5.jpg'
+            alt='All Ethiopia Soccer Academy'
+            layout='fill'
+            objectFit='cover'
+            placeholder='blur'
+            blurDataURL='/pictures/placeholder.jpg'
+          />
+
           <h1> {lang === 'eng' ? 'CONTACT US' : 'አግኙን'}</h1>
         </section>
 

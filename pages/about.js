@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useContext } from 'react';
+import NextImage from '../components/NextImage';
 import { Context } from '../context';
 import BallSVG from '../public/svg/my-svg/BallSVG';
 
@@ -12,16 +13,16 @@ const About = () => {
       <main className='main-about'>
         {/* // sxn first section */}
         <section className='first-section'>
-          <div className='image-wrapper'>
-            <Image
-              // loader={myLoader}
-              src='/pictures/grass-img2.jpg'
-              alt='All Ethiopia Soccer Academy Grass'
-              layout='fill'
-              objectFit='cover'
-              objectPosition='0 57.5%'
-            />
-          </div>
+          <NextImage
+            src='/pictures/grass-img2.jpg'
+            alt='All Ethiopia Soccer Academy Grass'
+            layout='fill'
+            objectFit='cover'
+            objectPosition='0 57.5%'
+            placeholder='blur'
+            blurDataURL='/pictures/placeholder.jpg'
+          />
+
           <h1>{lang === 'eng' ? 'ABOUT US' : 'ስለ እኛ'}</h1>
         </section>
         {/* // sxn second section */}
@@ -106,15 +107,15 @@ const About = () => {
           {/* // sxn third section founders (khalid) section*/}
           <h2>{lang === 'eng' ? 'Founders' : 'መስራቾች'}</h2>
           <div id='khalid' className='image-name-position-wrapper'>
-            <div className='image-wrapper'>
-              <Image
-                // loader={myLoader}
-                src='/pictures/coach-khalid2.jpg'
-                alt='Coach Khalid'
-                layout='fill'
-                objectFit='cover'
-              />
-            </div>
+            <NextImage
+              src='/pictures/coach-khalid2.jpg'
+              alt='Coach Khalid'
+              layout='fill'
+              objectFit='cover'
+              placeholder='blur'
+              blurDataURL='/pictures/placeholder.jpg'
+            />
+
             <div className='name-position-wrapper'>
               <h6 id='khalid'>
                 {lang === 'eng' ? 'Coach Khalid Mohammed' : 'አሰልጣኝ ካሊድ መሀመድ'}
@@ -213,15 +214,15 @@ const About = () => {
             id='abdulkerim'
             className='image-name-position-wrapper abdulkerim'
           >
-            <div className='image-wrapper'>
-              <Image
-                // loader={myLoader}
-                src='/pictures/coach-abdulkerim2.jpg'
-                alt='Coach Khalid'
-                layout='fill'
-                objectFit='cover'
-              />
-            </div>
+            <NextImage
+              src='/pictures/coach-abdulkerim2.jpg'
+              alt='Coach Khalid'
+              layout='fill'
+              objectFit='cover'
+              placeholder='blur'
+              blurDataURL='/pictures/placeholder.jpg'
+            />
+
             <div className='name-position-wrapper'>
               <h6>
                 {lang === 'eng'

@@ -379,7 +379,7 @@ export default function Home() {
             <div className='news-card'>
               <NextImage
                 src='/pictures/img11.jpg'
-                alt='All Ethiopia Soccer Academy Interview'
+                alt='All Ethiopia Soccer Academy Class Training'
                 layout='fill'
                 className='news-card-image'
                 objectFit='cover'
