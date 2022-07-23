@@ -651,11 +651,17 @@ header li a:active {
   grid-template-columns: 1fr 1px 1fr;
   grid-column-gap: 50px;
 }
+.home-main .fourth-section .khalid-grid .image-wrapper {
+  margin-left: auto;
+}
 .home-main .fourth-section .abdulkerim-grid {
   display: grid;
   grid-template-columns: 1fr 1px 1fr;
   grid-column-gap: 50px;
   margin-top: 50px;
+}
+.home-main .fourth-section .abdulkerim-grid .image-wrapper {
+  margin-right: auto;
 }
 .home-main .fourth-section .image-wrapper {
   position: relative;
@@ -779,6 +785,10 @@ header li a:active {
   position: relative;
   overflow: hidden;
 }
+.home-main .fifth-section .image-wrapper {
+  position: relative;
+  aspect-ratio: 5/5;
+}
 .home-main .gallery-watermark {
   position: absolute;
   font-size: 25vw;
@@ -827,6 +837,11 @@ header li a:active {
   background: white;
   display: flex;
   flex-direction: column;
+}
+.home-main .news-card .image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 7/5;
 }
 .home-main .news-card:hover,
 .home-main .news-card:active {

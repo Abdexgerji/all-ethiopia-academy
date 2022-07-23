@@ -82,19 +82,18 @@ export default function Home() {
         </section>
         {/* // sxn 2nd / short about */}
         <section className='second-section full-vh'>
-          <div className='image-wrapper'>
-            <Image
-              // loader={myLoader}
-              src='/pictures/training-image.jpg'
-              alt='Training Image'
-              layout='fill'
-              objectFit='cover'
-              placeholder='blur'
-              // blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMU+M8QCQADoAFqQjBfowAAAABJRU5ErkJggg=='
-              // quality='100'
-              blurDataURL='/pictures/placeholder.jpg'
-            />
-          </div>
+          <NextImage
+            // loader={myLoader}
+            src='/pictures/training-image.jpg'
+            alt='Training Image'
+            layout='fill'
+            objectFit='cover'
+            placeholder='blur'
+            // blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMU+M8QCQADoAFqQjBfowAAAABJRU5ErkJggg=='
+            // quality='100'
+            blurDataURL='/pictures/placeholder.jpg'
+          />
+
           <div className='text-wrapper horizontal-padding-for-whole-site'>
             <h2>
               {lang === 'eng'
@@ -188,21 +187,21 @@ export default function Home() {
           </h2>
           <div className='khalid-grid'>
             <div>
-              <div className='image-wrapper margin-left-auto'>
-                <Image
-                  // loader={myLoader}
-                  src='/pictures/coach-khalid-cropped.jpg'
-                  alt='Coach Khalid'
-                  layout='fill'
-                  style={
-                    {
-                      // transform: 'scaleX(-1)', // to flip image horizontally
-                    }
+              <NextImage
+                // loader={myLoader}
+                src='/pictures/coach-khalid-cropped.jpg'
+                alt='Coach Khalid'
+                layout='fill'
+                style={
+                  {
+                    // transform: 'scaleX(-1)', // to flip image horizontally
                   }
-                  objectFit='cover'
-                  objectPosition='top'
-                />
-              </div>
+                }
+                objectFit='cover'
+                objectPosition='top'
+                placeholder='blur'
+                blurDataURL='/pictures/placeholder.jpg'
+              />
             </div>
 
             {/*vertical divider line  */}
@@ -283,22 +282,21 @@ export default function Home() {
             {/*vertical divider line  */}
             <div className='vertical-divider'></div>
             <div>
-              {' '}
-              <div className='image-wrapper margin-right-auto'>
-                <Image
-                  // loader={myLoader}
-                  src='/pictures/coach-abdulkerim.jpg'
-                  alt='Coach Abdulkerim'
-                  layout='fill'
-                  style={
-                    {
-                      // transform: 'scaleX(-1)', // to flip image horizontally
-                    }
+              <NextImage
+                // loader={myLoader}
+                src='/pictures/coach-abdulkerim.jpg'
+                alt='Coach Abdulkerim'
+                layout='fill'
+                style={
+                  {
+                    // transform: 'scaleX(-1)', // to flip image horizontally
                   }
-                  objectFit='cover'
-                  objectPosition='top'
-                />
-              </div>
+                }
+                objectFit='cover'
+                objectPosition='top'
+                placeholder='blur'
+                blurDataURL='/pictures/placeholder.jpg'
+              />
             </div>
           </div>
         </section>
@@ -311,24 +309,16 @@ export default function Home() {
           </p>
           <div className='gallery-images-wrapper'>
             {galleryImages.map((image, index) => (
-              <>
-                <div
-                  key={index}
-                  className='image-wrapper'
-                  style={{
-                    position: 'relative',
-                    aspectRatio: '5/5',
-                  }}
-                >
-                  <Image
-                    // loader={myLoader}
-                    src={image}
-                    alt='All Ethiopia Soccer Academy'
-                    layout='fill'
-                    objectFit='cover'
-                  />
-                </div>
-              </>
+              <div key={index}>
+                <NextImage
+                  src={image}
+                  alt='All Ethiopia Soccer Academy'
+                  layout='fill'
+                  objectFit='cover'
+                  placeholder='blur'
+                  blurDataURL='/pictures/placeholder.jpg'
+                />
+              </div>
             ))}
           </div>
         </section>
@@ -341,23 +331,16 @@ export default function Home() {
 
           <div className='news-cards-wrapper horizontal-padding-for-whole-site'>
             <div className='news-card'>
-              <div
-                className='image-wrapper'
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  aspectRatio: '7/5',
-                }}
-              >
-                <Image
-                  // loader={myLoader}
-                  src='/pictures/ethiopia-vs-egypt.jpg'
-                  alt='Ethiopia Vs Egypt'
-                  layout='fill'
-                  className='news-card-image'
-                  objectFit='cover'
-                />
-              </div>
+              <NextImage
+                src='/pictures/ethiopia-vs-egypt.jpg'
+                alt='Ethiopia Vs Egypt'
+                layout='fill'
+                className='news-card-image'
+                objectFit='cover'
+                placeholder='blur'
+                blurDataURL='/pictures/placeholder.jpg'
+              />
+
               <h5 className=' news-card-header'>
                 {lang === 'eng' ? 'Ethiopia vs Egypt' : 'ኢትዮጵያ vs ግብፅ'}
               </h5>
@@ -371,23 +354,15 @@ export default function Home() {
               </p>
             </div>
             <div className='news-card'>
-              <div
-                className='image-wrapper'
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  aspectRatio: '7/5',
-                }}
-              >
-                <Image
-                  // loader={myLoader}
-                  src='/pictures/img7.jpg'
-                  alt='All Ethiopia Soccer Academy Interview'
-                  layout='fill'
-                  className='news-card-image'
-                  objectFit='cover'
-                />
-              </div>
+              <NextImage
+                src='/pictures/img7.jpg'
+                alt='All Ethiopia Soccer Academy Interview'
+                layout='fill'
+                className='news-card-image'
+                objectFit='cover'
+                placeholder='blur'
+                blurDataURL='/pictures/placeholder.jpg'
+              />
 
               <h5 className=' news-card-header'>
                 {lang === 'eng' ? 'Our Interview' : 'የኛ ቃለ ምልልስ'}
@@ -402,23 +377,16 @@ export default function Home() {
               </p>
             </div>
             <div className='news-card'>
-              <div
-                className='image-wrapper'
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  aspectRatio: '7/5',
-                }}
-              >
-                <Image
-                  // loader={myLoader}
-                  src='/pictures/img11.jpg'
-                  alt='All Ethiopia Soccer Academy Class Training'
-                  layout='fill'
-                  className='news-card-image'
-                  objectFit='cover'
-                />
-              </div>
+              <NextImage
+                src='/pictures/img11.jpg'
+                alt='All Ethiopia Soccer Academy Interview'
+                layout='fill'
+                className='news-card-image'
+                objectFit='cover'
+                placeholder='blur'
+                blurDataURL='/pictures/placeholder.jpg'
+              />
+
               <h5 className=' news-card-header'>
                 {lang === 'eng'
                   ? 'Class Based Trainings'
@@ -442,15 +410,14 @@ export default function Home() {
         {/*  // sxn seventh section / contact */}
         <section className='seventh-section horizontal-padding-for-whole-site'>
           <div className='wrapper'>
-            <div className='image-wrapper'>
-              <Image
-                // loader={myLoader}
-                src='/pictures/grass-img.jpg'
-                alt='Grass Image'
-                layout='fill'
-                objectFit='cover'
-              />
-            </div>
+            <NextImage
+              src='/pictures/grass-img.jpg'
+              alt='Grass Image'
+              layout='fill'
+              objectFit='cover'
+              placeholder='blur'
+              blurDataURL='/pictures/placeholder.jpg'
+            />
             <button>{lang === 'eng' ? 'CONTACT US' : 'አግኙን'}</button>
           </div>
         </section>

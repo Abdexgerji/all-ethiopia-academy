@@ -701,6 +701,10 @@ header li a:active {
     display: grid;
     grid-template-columns: 1fr 1px 1fr;
     grid-column-gap: 50px;
+
+    & .image-wrapper {
+      margin-left: auto;
+    }
   }
 
   .fourth-section .abdulkerim-grid {
@@ -708,6 +712,9 @@ header li a:active {
     grid-template-columns: 1fr 1px 1fr;
     grid-column-gap: 50px;
     margin-top: 50px;
+    & .image-wrapper {
+      margin-right: auto;
+    }
   }
 
   .fourth-section .image-wrapper {
@@ -840,6 +847,11 @@ header li a:active {
     padding-block: 42px;
     position: relative;
     overflow: hidden;
+
+    .image-wrapper {
+      position: relative;
+      aspect-ratio: 5/5;
+    }
   }
 
   .gallery-watermark {
@@ -896,6 +908,12 @@ header li a:active {
     background: white;
     display: flex;
     flex-direction: column;
+
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 7/5;
+    }
   }
 
   .news-card:hover,
