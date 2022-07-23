@@ -8,6 +8,8 @@ import StadiumSVG from '../public/svg/my-svg/StadiumSVG';
 import StarsUnderlineSVG from '../public/svg/my-svg/StarsUnderlineSVG';
 import ArrowDownSVG from '../public/svg/my-svg/ArrowDownSVG';
 import { Context } from '../context';
+import NextImage from '../components/NextImage';
+// import testPic from '../public/pictures/training-image.jpg';
 
 const images = [
   {
@@ -44,6 +46,11 @@ export default function Home() {
         {/* // sxn 1st section */}
         <section className='first-section '>
           <div className='first-section-wrapper horizontal-padding-for-whole-site'>
+            <NextImage
+              src='/pictures/hero-bg.jpg'
+              alt='grass-background'
+              priority
+            />
             <div className='left-content'>
               <h3>
                 {lang === 'eng'
@@ -82,6 +89,10 @@ export default function Home() {
               alt='Training Image'
               layout='fill'
               objectFit='cover'
+              placeholder='blur'
+              // blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMU+M8QCQADoAFqQjBfowAAAABJRU5ErkJggg=='
+              // quality='100'
+              blurDataURL='/pictures/placeholder.jpg'
             />
           </div>
           <div className='text-wrapper horizontal-padding-for-whole-site'>

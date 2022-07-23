@@ -50,7 +50,7 @@ const NavBar = () => {
     <header className='horizontal-padding-for-whole-site'>
       <Link href='/'>
         <a>
-          <NextImage src='/pictures/logo.jpg' alt='bunna logo' />
+          <NextImage src='/pictures/logo.jpg' alt='bunna logo' priority />
           {/* <img src='/pictures/logo.jpg' alt='bunna logo' /> */}
         </a>
       </Link>

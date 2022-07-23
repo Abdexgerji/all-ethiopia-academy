@@ -293,11 +293,16 @@ header li a:active {
   /* // sxn seventh section / contact*/
 }
 .home-main .first-section-wrapper {
-  background-image: url("/pictures/hero-bg.jpg");
-  background-size: cover;
   position: relative;
   min-height: calc(100vh - 45px);
-  z-index: 0;
+}
+.home-main .first-section .image-wrapper {
+  position: absolute;
+  z-index: -2;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 .home-main .first-section-wrapper::before {
   content: "";
@@ -457,6 +462,17 @@ header li a:active {
     font-size: 25px;
   }
 }
+@media screen and (max-width: 450px) and (hover: none) {
+  .home-main .first-section .left-content {
+    transform: translateY(120px);
+  }
+  .home-main .first-section h1 {
+    line-height: 2.9;
+  }
+  .home-main .first-section .arrow-down-svg {
+    margin-top: 120px;
+  }
+}
 .home-main .second-section {
   display: flex;
   justify-content: center;
@@ -502,6 +518,7 @@ header li a:active {
     height: 50vh;
     width: 100%;
     margin-bottom: 30px;
+    max-width: 100vw;
   }
   .home-main .second-section .text-wrapper {
     margin: 15px 0;

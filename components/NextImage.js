@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const NextImage = ({ src, alt, otherProps }) => {
+const NextImage = ({ src, alt, ...otherProps }) => {
   return (
     <div className='image-wrapper'>
       <Image
@@ -9,7 +9,7 @@ const NextImage = ({ src, alt, otherProps }) => {
         alt={alt}
         layout='fill'
         objectFit='cover'
-        {...otherProps}
+        {...otherProps} // for other props
       />
     </div>
   );
