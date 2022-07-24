@@ -24,6 +24,18 @@ const galleryImages = [
 ];
 
 export default function Home() {
+  const [latestNews, setLatestNews] = useState({});
+  const [loadingNews, setLoadingNews] = useState(true);
+  useEffect(() => {
+    // choose only 3 news
+    const latestNews1 = newsData.slice(0, 3);
+
+    setLatestNews(latestNews1);
+    setLoadingNews(false);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const { lang, setLang } = useContext(Context);
 
   // router
@@ -315,83 +327,42 @@ export default function Home() {
         </section>
 
         {/* // sxn news*/}
+
+        {/* latestNews */}
         <section className='sixth-section'>
           <h2 className='section-heading'>
             {lang === 'eng' ? 'Latest News' : 'አዳዲስ ዜናዎች'}
           </h2>
 
           <div className='news-cards-wrapper horizontal-padding-for-whole-site'>
-            <div className='news-card'>
-              <NextImage
-                src='/pictures/ethiopia-vs-egypt.jpg'
-                alt='Ethiopia Vs Egypt'
-                layout='fill'
-                className='news-card-image'
-                objectFit='cover'
-                placeholder='blur'
-                blurDataURL='/pictures/placeholder.jpg'
-              />
+            {newsData.slice(0, 3).map((news, index) => (
+              <Link key={index} href={`news/${news.id}`}>
+                <div className='news-card'>
+                  <NextImage
+                    // src='/pictures/ethiopia-vs-egypt.jpg'
+                    src={news.imageLocation}
+                    alt={news.title}
+                    layout='fill'
+                    className='news-card-image'
+                    objectFit='cover'
+                    placeholder='blur'
+                    blurDataURL='/pictures/placeholder.jpg'
+                  />
 
-              <h5 className=' news-card-header'>
-                {lang === 'eng' ? 'Ethiopia vs Egypt' : 'ኢትዮጵያ vs ግብፅ'}
-              </h5>
-              <p className='news-card-description '>
-                {lang === 'eng'
-                  ? 'Ethiopia defeated egypt for AFCON qualifiers'
-                  : 'ኢትዮጵያ በአፍሪካ ዋንጫ ማጣሪያ ግብፅን አሸንፋለች'}
-              </p>
-              <p className='news-card-date'>
-                {lang === 'eng' ? 'June 22, 2021' : 'ጁን 22, 2021'}
-              </p>
-            </div>
-            <div className='news-card'>
-              <NextImage
-                src='/pictures/img7.jpg'
-                alt='All Ethiopia Soccer Academy Interview'
-                layout='fill'
-                className='news-card-image'
-                objectFit='cover'
-                placeholder='blur'
-                blurDataURL='/pictures/placeholder.jpg'
-              />
-
-              <h5 className=' news-card-header'>
-                {lang === 'eng' ? 'Our Interview' : 'የኛ ቃለ ምልልስ'}
-              </h5>
-              <p className='news-card-description '>
-                {lang === 'eng'
-                  ? 'We were interviewed by Kana TV'
-                  : 'በቃና ቲቪ ቃለ መጠይቅ ተደረገልን'}
-              </p>
-              <p className='news-card-date'>
-                {lang === 'eng' ? 'Mar 05, 2022' : 'ማርች 05, 2022'}
-              </p>
-            </div>
-            <div className='news-card'>
-              <NextImage
-                src='/pictures/img11.jpg'
-                alt='All Ethiopia Soccer Academy Class Training'
-                layout='fill'
-                className='news-card-image'
-                objectFit='cover'
-                placeholder='blur'
-                blurDataURL='/pictures/placeholder.jpg'
-              />
-
-              <h5 className=' news-card-header'>
-                {lang === 'eng'
-                  ? 'Class Based Trainings'
-                  : 'ክፍል ውስጥ የተመሰረቱ ስልጠናዎች'}
-              </h5>
-              <p className='news-card-description '>
-                {lang === 'eng'
-                  ? 'We offer in-class trainings to our players'
-                  : 'ለተጫዋቾቻችን በክፍል ውስጥ ስልጠናዎችን እንሰጣለን'}
-              </p>
-              <p className='news-card-date'>
-                {lang === 'eng' ? 'Feb 12, 2022' : 'ፌብሩዋሪ 12, 2022'}
-              </p>
-            </div>
+                  <h5 className=' news-card-header'>
+                    {lang === 'eng' ? news.title : news.amharic.title}
+                  </h5>
+                  <p className='news-card-description '>
+                    {lang === 'eng'
+                      ? news.description
+                      : news.amharic.description}
+                  </p>
+                  <p className='news-card-date'>
+                    {lang === 'eng' ? news.date : news.amharic.date}
+                  </p>
+                </div>
+              </Link>
+            ))}
           </div>
           <button className='news-button'>
             {lang === 'eng' ? 'More News' : 'ተጨማሪ ዜናዎች'}
