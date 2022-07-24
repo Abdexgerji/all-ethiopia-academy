@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useContext } from 'react';
 import NextImage from '../../components/NextImage';
 import { Context } from '../../context';
+import newsData from '../../data/newsData';
 
 const News = () => {
   const { lang } = useContext(Context);
@@ -36,78 +37,36 @@ const News = () => {
           <div className='section-wrapper'>
             <h2>{lang === 'eng' ? 'Latest News' : 'አዳዲስ ዜናዎች'} </h2>
             <div className='news-cards-wrapper'>
-              <div className='news-card'>
-                <NextImage
-                  src='/pictures/ethiopia-vs-egypt.jpg'
-                  alt='Ethiopia vs Egypt'
-                  layout='fill'
-                  objectFit='cover'
-                  placeholder='blur'
-                  blurDataURL='/pictures/placeholder.jpg'
-                />
+              {/* newsData */}
 
-                <div className='content-wrapper'>
-                  <h5>
-                    {lang === 'eng' ? 'Egypt vs Ethiopia' : 'ኢትዮጵያ vs ግብፅ'}
-                  </h5>
-                  <p>
-                    {lang === 'eng'
-                      ? 'Ethiopia defeated egypt for AFCON qualifiers'
-                      : 'ኢትዮጵያ በአፍሪካ ዋንጫ ማጣሪያ ግብፅን አሸንፋለች'}
-                  </p>
-                </div>
-                <p className='date'>
-                  {lang === 'eng' ? 'June 22, 2022' : 'ጁን 22, 2021'}
-                </p>
-              </div>
-              <div className='news-card'>
-                <NextImage
-                  src='/pictures/img7.jpg'
-                  alt='Kana Interview'
-                  layout='fill'
-                  objectFit='cover'
-                  placeholder='blur'
-                  blurDataURL='/pictures/placeholder.jpg'
-                />
+              {newsData.map((news, index) => (
+                <Link href={`news/${news.id}`} key={index}>
+                  <div className='news-card'>
+                    <NextImage
+                      src={news.imageLocation}
+                      alt={news.title}
+                      layout='fill'
+                      objectFit='cover'
+                      placeholder='blur'
+                      blurDataURL='/pictures/placeholder.jpg'
+                    />
 
-                <div className='content-wrapper'>
-                  <h5>{lang === 'eng' ? 'Our Interview' : 'የኛ ቃለ ምልልስ'}</h5>
-                  <p>
-                    {lang === 'eng'
-                      ? 'We were interviewed by Kana TV'
-                      : 'በቃና ቲቪ ቃለ መጠይቅ ተደረገልን'}
-                  </p>
-                </div>
-                <p className='date'>
-                  {lang === 'eng' ? 'Mar 05, 2022' : 'ማርች 05, 2022'}
-                </p>
-              </div>
-              <div className='news-card'>
-                <NextImage
-                  src='/pictures/img11.jpg'
-                  alt='Class Based Training'
-                  layout='fill'
-                  objectFit='cover'
-                  placeholder='blur'
-                  blurDataURL='/pictures/placeholder.jpg'
-                />
-
-                <div className='content-wrapper'>
-                  <h5>
-                    {lang === 'eng'
-                      ? 'Class Based Trainings '
-                      : 'ክፍል ውስጥ የተመሰረቱ ስልጠናዎች'}
-                  </h5>
-                  <p>
-                    {lang === 'eng'
-                      ? 'We offer in class trainings to our players'
-                      : 'ለተጫዋቾቻችን በክፍል ውስጥ ስልጠናዎችን እንሰጣለን'}
-                  </p>
-                </div>
-                <p className='date'>
-                  {lang === 'eng' ? 'Feb 12, 2022' : 'ፌብሩዋሪ 12, 2022'}
-                </p>
-              </div>
+                    <div className='content-wrapper'>
+                      <h5>
+                        {lang === 'eng' ? news.title : news.amharic.title}
+                      </h5>
+                      <p>
+                        {lang === 'eng'
+                          ? news.description
+                          : news.amharic.description}
+                      </p>
+                    </div>
+                    <p className='date'>
+                      {lang === 'eng' ? news.date : news.amharic.date}
+                    </p>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

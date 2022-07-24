@@ -43,7 +43,20 @@ const Contact = () => {
                   <label> {lang === 'eng' ? 'Message' : 'መልእክት'}</label>
                   <textarea></textarea>
                 </div>
-                <button> {lang === 'eng' ? 'Send' : 'ላክ'}</button>
+                <button
+                  onClick={() =>
+                    window.alert(
+                      `${
+                        lang === 'eng'
+                          ? 'Functionality is on work, call us instead!'
+                          : 'ለጊዜው አይሰራም፣ ይደውሉልን!'
+                      }`
+                    )
+                  }
+                >
+                  {' '}
+                  {lang === 'eng' ? 'Send' : 'ላክ'}
+                </button>
               </div>
             </div>
             <div className='address'>

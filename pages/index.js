@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import PlayerSVG from '../public/svg/my-svg/PlayerSVG';
 import CoachSVG from '../public/svg/my-svg/CoachSVG';
 import StadiumSVG from '../public/svg/my-svg/StadiumSVG';
@@ -24,18 +24,6 @@ const galleryImages = [
 ];
 
 export default function Home() {
-  const [latestNews, setLatestNews] = useState({});
-  const [loadingNews, setLoadingNews] = useState(true);
-  useEffect(() => {
-    // choose only 3 news
-    const latestNews1 = newsData.slice(0, 3);
-
-    setLatestNews(latestNews1);
-    setLoadingNews(false);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const { lang, setLang } = useContext(Context);
 
   // router
@@ -364,9 +352,13 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <button className='news-button'>
-            {lang === 'eng' ? 'More News' : 'ተጨማሪ ዜናዎች'}
-          </button>
+          <Link href='/news'>
+            <a>
+              <button className='news-button'>
+                {lang === 'eng' ? 'More News' : 'ተጨማሪ ዜናዎች'}
+              </button>
+            </a>
+          </Link>
         </section>
 
         {/*  // sxn seventh section / contact */}
@@ -380,7 +372,12 @@ export default function Home() {
               placeholder='blur'
               blurDataURL='/pictures/placeholder.jpg'
             />
-            <button>{lang === 'eng' ? 'CONTACT US' : 'አግኙን'}</button>
+
+            <Link href='/contact'>
+              <a>
+                <button>{lang === 'eng' ? 'CONTACT US' : 'አግኙን'}</button>
+              </a>
+            </Link>
           </div>
         </section>
       </main>
