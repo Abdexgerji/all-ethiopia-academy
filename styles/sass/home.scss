@@ -537,11 +537,12 @@ header li a:active {
   .second-section .text-wrapper {
     width: 50%;
     margin-top: -46px;
+    text-align: center;
   }
 
   .second-section h2 {
-    font-size: max(3.5vw, 22px);
-    font-weight: 600;
+    font-size: max(3.5vw, 27px);
+    font-weight: 700;
     color: var(--primary-color);
     text-transform: capitalize;
   }
