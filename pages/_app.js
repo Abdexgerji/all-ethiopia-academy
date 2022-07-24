@@ -4,6 +4,7 @@ import '../styles/home.css';
 import '../styles/contact.css';
 import '../styles/about.css';
 import '../styles/news.css';
+import '../styles/news[id].css';
 import Head from 'next/head';
 import { Provider } from '../context';
 

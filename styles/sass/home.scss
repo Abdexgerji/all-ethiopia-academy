@@ -78,6 +78,10 @@ a {
   height: 100vh;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 // li {
 //   list-style: none;
 // }
@@ -376,6 +380,21 @@ header li a:active {
     margin-left: 193px;
     margin-top: 60px;
     transform: translateY(-32px);
+    cursor: pointer;
+    transition: 0.3s;
+
+    path {
+      transition: 0.3s;
+    }
+
+    &:hover path,
+    &:focus path {
+      fill: gray;
+    }
+    &:hover,
+    &:focus {
+      // transform: scale(1.5);
+    }
   }
 
   @media screen and (max-width: 1125px) {
@@ -829,7 +848,7 @@ header li a:active {
     .fourth-section .image-wrapper {
       margin: auto;
       height: 332px;
-      width: min(100vw, 310px);
+      width: min(100%, 310px);
       margin-bottom: 22px;
     }
     .fourth-section .coach-khalid-description,
@@ -1096,14 +1115,15 @@ footer .footer-wrapper {
 footer .image-wrapper {
   position: relative;
   aspect-ratio: 5/5;
-  height: 100%;
+  width: 45px;
 }
 
 footer .col-1-wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 20px;
   justify-items: center;
+  align-content: flex-start;
 }
 
 footer .svgs-wrapper {
@@ -1157,7 +1177,7 @@ footer .col-2-wrapper li {
 }
 
 .col-3-wrapper {
-  margin-top: 8px;
+  // margin-top: 8px;
 }
 
 .col-3-wrapper ul {

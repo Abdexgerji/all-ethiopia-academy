@@ -10,18 +10,7 @@ import ArrowDownSVG from '../public/svg/my-svg/ArrowDownSVG';
 import { Context } from '../context';
 import NextImage from '../components/NextImage';
 // import testPic from '../public/pictures/training-image.jpg';
-
-const images = [
-  {
-    url: '/pictures/img4-croped.jpg',
-  },
-  {
-    url: '/pictures/img5.jpg',
-  },
-  {
-    url: '/pictures/img18-croped.jpg',
-  },
-];
+import newsData from '../data/newsData';
 
 const galleryImages = [
   '/pictures/img13-croped.jpg',
@@ -47,7 +36,7 @@ export default function Home() {
         <section className='first-section '>
           <div className='first-section-wrapper horizontal-padding-for-whole-site'>
             <NextImage
-              src='/pictures/hero-bg.jpg'
+              src='/pictures/img5.jpg'
               alt='grass-background'
               priority
             />
@@ -76,14 +65,19 @@ export default function Home() {
                 </>
               )}
               {/* down icon*/}
-              <ArrowDownSVG className='arrow-down-svg' />
+              <Link href='/#second-section'>
+                <ArrowDownSVG
+                  onClick={console.log('h')}
+                  className='arrow-down-svg'
+                />
+              </Link>
             </div>
           </div>
         </section>
         {/* // sxn 2nd / short about */}
-        <section className='second-section full-vh'>
+        <section id='second-section' className='second-section full-vh'>
           <NextImage
-            src='/pictures/training-image.jpg'
+            src='/pictures/img6.jpg'
             alt='Training Image'
             layout='fill'
             objectFit='cover'

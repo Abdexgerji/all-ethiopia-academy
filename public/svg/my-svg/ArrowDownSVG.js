@@ -1,6 +1,14 @@
-const ArrowDownSVG = ({ style, width, height, fill, className }) => {
+const ArrowDownSVG = ({
+  style,
+  width,
+  height,
+  fill,
+  className,
+  ...otherProps
+}) => {
   return (
     <svg
+      {...otherProps}
       className={className}
       style={{ ...style }}
       width='24'

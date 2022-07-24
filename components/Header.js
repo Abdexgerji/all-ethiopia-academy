@@ -50,8 +50,12 @@ const NavBar = () => {
     <header className='horizontal-padding-for-whole-site'>
       <Link href='/'>
         <a>
-          <NextImage src='/pictures/logo.jpg' alt='bunna logo' priority />
-          {/* <img src='/pictures/logo.jpg' alt='bunna logo' /> */}
+          <NextImage
+            src='/pictures/logo.jpg'
+            alt='all ethiopia soccer academy logo'
+            priority
+          />
+          {/* <img src='/pictures/logo.jpg' alt='all ethiopia soccer academy logo logo' /> */}
         </a>
       </Link>
 
@@ -200,7 +204,7 @@ const NavBar = () => {
               setLangDropdownOpen((prev) => !prev);
             }}
           >
-            <spa>{lang === 'eng' ? 'En' : 'አማ'}</spa>
+            <spa>{lang === 'eng' ? 'አማ' : 'En'}</spa>
             <DownTriangleSVG />
           </button>
 

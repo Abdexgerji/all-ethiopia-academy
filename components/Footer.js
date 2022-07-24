@@ -8,6 +8,7 @@ import MailSVG from '../public/svg/my-svg/MailSVG';
 import TelegramSVG from '../public/svg/my-svg/TelegramSVG';
 import TelephoneSVG from '../public/svg/my-svg/TelephoneSVG';
 import YoutubeSVG from '../public/svg/my-svg/YoutubeSVG';
+import NextImage from './NextImage';
 
 const Footer = () => {
   const { lang, setLang } = useContext(Context);
@@ -17,15 +18,14 @@ const Footer = () => {
       <footer>
         <div className='footer-wrapper'>
           <div className='col-1-wrapper'>
-            <div className='image-wrapper'>
-              <Image
-                src='/pictures/logo-copy.jpg'
-                alt='Ethiopia Vs Egypt'
-                layout='fill'
-                className='news-card-image'
-                objectFit='cover'
-              />
-            </div>
+            <NextImage
+              src='/pictures/logo-copy.jpg'
+              alt='All Ethiopia Soccer Academy Logo'
+              layout='fill'
+              className='news-card-image'
+              objectFit='cover'
+            />
+
             <h5>
               {lang === 'eng'
                 ? 'All Ethiopia Soccer Academy'
