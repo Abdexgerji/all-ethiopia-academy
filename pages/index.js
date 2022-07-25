@@ -37,7 +37,7 @@ export default function Home() {
           <div className='first-section-wrapper horizontal-padding-for-whole-site'>
             <NextImage
               src='/pictures/img5.jpg'
-              alt='grass-background'
+              alt='All Ethiopia Soccer Academy'
               priority
             />
             <div className='left-content'>

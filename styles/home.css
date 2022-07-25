@@ -162,7 +162,7 @@ header li a:active {
 .lang-btn:hover {
   background-color: #f9f7f7;
 }
-.lang-btn:focus {
+.lang-btn:active {
   box-shadow: 0 2px 9px rgba(0, 0, 0, 0.11);
 }
 .lang-btn svg {
@@ -267,6 +267,19 @@ header li a:active {
   list-style: none;
 }
 
+.side-nav .nav-contact a {
+  background: var(--primary-color);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+.side-nav .nav-contact a:hover {
+  color: white;
+  opacity: 0.8;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5019607843);
+}
+
 .current-page-link {
   font-weight: 600 !important;
   text-shadow: 0px 0px 29px #000000;
@@ -368,7 +381,7 @@ header li a:active {
 .home-main .first-section .arrow-down-svg path {
   transition: 0.3s;
 }
-.home-main .first-section .arrow-down-svg:hover path, .home-main .first-section .arrow-down-svg:focus path {
+.home-main .first-section .arrow-down-svg:hover path, .home-main .first-section .arrow-down-svg:active path {
   fill: gray;
 }
 @media screen and (max-width: 1125px) {
@@ -959,7 +972,7 @@ header li a:active {
   cursor: pointer;
   transition: 0.2s;
 }
-.home-main .seventh-section button:focus {
+.home-main .seventh-section button:active {
   box-shadow: 0 0 13px 1px #ffffff;
 }
 .home-main .seventh-section button:hover {

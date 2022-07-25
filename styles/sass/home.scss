@@ -167,7 +167,7 @@ header li a:active {
   &:hover {
     background-color: #f9f7f7;
   }
-  &:focus {
+  &:active {
     box-shadow: 0 2px 9px rgb(0 0 0 / 11%);
   }
 
@@ -275,6 +275,22 @@ header li a:active {
 
   li {
     list-style: none;
+  }
+}
+
+.side-nav {
+  .nav-contact a {
+    background: var(--primary-color);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+
+  .nav-contact a:hover {
+    color: white;
+    opacity: 0.8;
+    box-shadow: 0px 3px 5px #00000080;
   }
 }
 
@@ -388,11 +404,11 @@ header li a:active {
     }
 
     &:hover path,
-    &:focus path {
+    &:active path {
       fill: gray;
     }
     &:hover,
-    &:focus {
+    &:active {
       // transform: scale(1.5);
     }
   }
@@ -1050,7 +1066,7 @@ header li a:active {
     cursor: pointer;
     transition: 0.2s;
 
-    &:focus {
+    &:active {
       box-shadow: 0 0 13px 1px #ffffff;
     }
     &:hover {

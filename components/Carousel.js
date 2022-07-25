@@ -24,21 +24,21 @@ const CarouselComponent = () => {
         // width={'40%'}
       >
         <div>
-          <img
+          {/* <img
             style={{ objectFit: 'cover', height: '90vh' }}
             // height='500vh' //! this height is the height of the carousel
             src='/pictures/img4-croped.jpg'
-          />
+          /> */}
         </div>
         <div>
-          <img
+          {/* <img
             style={{ objectFit: 'cover', height: '90vh' }}
             // height='500vh' //! this height is the height of the carousel
             src='/pictures/img5.jpg'
-          />
+          /> */}
         </div>
         <div>
-          <img
+          {/* <img
             style={{
               objectFit: 'cover',
               height: '90vh',
@@ -46,7 +46,7 @@ const CarouselComponent = () => {
             }}
             // height='500vh' //! this height is the height of the carousel
             src='/pictures/img18-croped.jpg'
-          />
+          /> */}
         </div>
       </Carousel>
     </div>

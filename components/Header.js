@@ -129,6 +129,7 @@ const NavBar = () => {
             </li>
 
             <li
+              className='nav-contact'
               onClick={() => {
                 setSideNavOpen(false);
               }}
