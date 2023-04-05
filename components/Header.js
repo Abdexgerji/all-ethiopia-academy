@@ -24,6 +24,7 @@ const NavBar = () => {
     setSideNavOpen(false);
   });
 
+  // future, should be removed
   useEffect(() => {
     // add when mounted
     document.addEventListener('mousedown', handleClick);
