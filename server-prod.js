@@ -1,8 +1,8 @@
 const express = require('express');
 const next = require('next');
-const { createProxyMiddleware } = require('http-proxy-middleware');
+// const { createProxyMiddleware } = require('http-proxy-middleware');
 var fs = require('fs');
-const colors = require('colors');
+// const colors = require('colors');
 require('dotenv').config();
 // console.log('process.env.NODE_ENV-->', process.env.NODE_ENV);
 // console.log('server.js process.env-->', process.env);
@@ -38,12 +38,6 @@ nextApp
       next();
     });
 
-    const { readdirSync } = require('fs');
-    const csrf = require('csurf');
-    const cookieParser = require('cookie-parser');
-    const cors = require('cors');
-    const csrfProtection = csrf({ cookie: true });
-
     // apply proxy in dev mode
     // if (dev) {
     // app.use(morgan('dev'));
@@ -66,41 +60,11 @@ nextApp
       )
     );
 
-    // app.use(
-    //   '/api',
-    //   createProxyMiddleware({
-    //     target: 'http://localhost:8000',
-    //     changeOrigin: true,
-    //   })
-    // );
-    // }
-
-    readdirSync('./back-end/routes').map((r) =>
-      app.use(
-        '/api',
-        cors(),
-        express.json(),
-        cookieParser(),
-        require(`./back-end/routes/${r}`)
-      )
-    );
-
-    // rt()
-    // const authRoutes = require('./back-end/routes/auth')
-
-    // app.use('/api',authRoutes)
-
-    app.get('/api/csrf-token', cookieParser(), csrfProtection, (req, res) => {
-      res.json({ csrfToken: req.csrfToken() });
+    app.get('/api/test', (req, res) => {
+      console.log('test');
+      res.send('test!');
     });
 
-    app.get('/fuck', (req, res) => {
-      console.log('f u');
-      res.send('fuck u!');
-    });
-
-    // const test = require('./back-end/routes/testRoutes');
-    // app.use('/f', test);
     // Global Error Handler. IMPORTANT function params MUST start with err
     app.use((err, req, res, next) => {
       console.log('err.stack==>'.red.bold, err.stack);
@@ -108,14 +72,9 @@ nextApp
       console.log('err.code==>'.red.inverse, err.code);
       console.log('err==>'.red, err);
 
-      if (
-        err.stack.includes('jwt expired') ||
-        err.stack.includes('No authorization token was found')
-      ) {
-        res.status(400).send('Please login again!');
-      }
       res.status(500).send('Internal server error from express');
 
+      // to add write errors to globalerr.txt file
       fs.appendFile(
         'globalerr.txt',
         `\n -${new Date()}- err--> ${err} \n stack--> ${err.stack}`,
@@ -140,6 +99,7 @@ nextApp
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   })
   .catch((err) => {
+    // add errors to err.txt file
     fs.appendFile(
       'err.txt',
       `\n -${new Date()}- err--> ${err} \n stack--> ${err.stack}`,
@@ -150,35 +110,3 @@ nextApp
     );
     console.log('Error', err);
   });
-
-// // server.js
-// const { createServer } = require('http');
-// const { parse } = require('url');
-// const next = require('next');
-
-// const dev = true;
-// const hostname = 'localhost';
-// const port = 3000;
-// // when using middleware `hostname` and `port` must be provided below
-// const app = next({ dev, hostname, port });
-// const handle = app.getRequestHandler();
-
-// app.prepare().then(() => {
-//   createServer((req, res) => {
-//     // Be sure to pass `true` as the second argument to `url.parse`.
-//     // This tells it to parse the query portion of the URL.
-//     const parsedUrl = parse(req.url, true);
-//     const { pathname, query } = parsedUrl;
-
-//     if (pathname === '/a') {
-//       app.render(req, res, '/a', query);
-//     } else if (pathname === '/b') {
-//       app.render(req, res, '/b', query);
-//     } else {
-//       handle(req, res, parsedUrl);
-//     }
-//   }).listen(port, (err) => {
-//     if (err) throw err;
-//     console.log(`> Ready on http://${hostname}:${port}`);
-//   });
-// });
